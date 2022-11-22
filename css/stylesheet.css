@@ -51,6 +51,11 @@ section h2{
     
     
 }
+footer{
+    background-color: black;
+    color: rgb(247, 245, 245);
+    border: 3px white solid;
+}
 #contact div {
     display: flex;
     align-items: center;

@@ -20,7 +20,7 @@ ul{
 }
 
 body{
-    background: linear-gradient(gray,white);
+    background: linear-gradient(black,white);
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -47,6 +47,8 @@ section h2{
 .img-pic{
     border-radius: 50%;
     display: flex;
+    padding: 1rem;
+    
     
 }
 #contact div {
@@ -57,17 +59,20 @@ section h2{
     
 }
 #contact div span{
+   /* border: 1px red solid; use it to understand padding and margin*/ 
     padding:0.5rem;
 }
 
 
 nav {
     display: flex;
-    align-items: center;
+    align-items:center;
     text-align: center;
-    font-size: 24px;
+    font-size: 18px;
     background-color: black;
     color: rgb(247, 245, 245);
+    border: 3px white solid;
+
 }
 
 .nav-links {
@@ -77,5 +82,6 @@ nav {
 }
 
 .nav-links a {
-    padding-left: 10rem;
+    padding-left: 14rem;
+    
 }

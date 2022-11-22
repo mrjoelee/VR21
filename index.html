@@ -22,10 +22,9 @@
   <body>
     <nav>
       <a href="#">
-        <img width="100px" src="images/logo.png" />
+        <img class="img-pic" width="100px" src="images/logo.png" />
       </a>
       <div class="nav-links">
-        <a href="#"></a>
         <a href="#">Home</a>
         <a href="#about">About</a>
         <a href="#portfolio">Portfolio</a>
@@ -35,19 +34,61 @@
     </nav>
     <section id="about">
       <h2>About Me...</h2>
-      <img
-        width="200px"
-        src="https://ca.slack-edge.com/E015GUGD2V6-U045APU3J4R-889927eefc7b-512"
-        alt="Joe"
-      />
+      <div class="about-container">
+        <div>
+          <img
+            class="img-pic"
+            width="300px"
+            src="https://ca.slack-edge.com/E015GUGD2V6-U045APU3J4R-889927eefc7b-512"
+            alt="Joe"
+          />
+        </div>
+        <p class="about-me">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem
+          illo sapiente eaque veritatis repudiandae libero at iure facere alias
+          perspiciatis veniam necessitatibus officiis voluptate excepturi dolore
+          quis, ut quam enim.
+        </p>
+      </div>
     </section>
     <section id="portfolio">
       <h2>Portfolio</h2>
-      <div>
+      <div class="project">
         <ul>
-          <li><a href="#">Project 1</a></li>
-          <li><a href="#">Project 2</a></li>
-          <li><a href="#">Project 3</a></li>
+          <li>
+            <a href="https://github.com/mrjoelee/RamenOkidoki.git">
+              <img
+                width="500px"
+                height="300px"
+                alt="RamenOkidoki"
+                src="https://user-images.githubusercontent.com/90262428/180697547-ec9d6995-ff71-46f6-8d57-0ff039c628f3.png"
+              />
+            </a>
+            <p>Ramen Okidoki</p>
+            <p>A Beta Restaurant WebSite with C#, ASP.NET MVC, MSSQL</p>
+          </li>
+          <li>
+            <a href="https://github.com/mrjoelee/TestYourJavaBeans">
+              <img
+                width="700px"
+                height="300px"
+                src="https://user-images.githubusercontent.com/90262428/203213923-3bfd58f5-df1e-43f0-98f9-5ce342fc0319.png"
+              />
+            </a>
+            <p>TestYourJavaBeans</p>
+            <p>Java Consoled App Trivia</p>
+          </li>
+          <li>
+            <a href="https://github.com/mrjoelee/SquidGamePingPong">
+              <video
+                width="500px"
+                height="300px"
+                src="https://user-images.githubusercontent.com/90262428/203215802-0ad0f01f-f3c3-4924-88f1-9c5ec75cfc62.mp4"
+              ></video>
+            </a>
+            <p>2D-SquidGame-PingPong</p>
+            <p>C#, Unity</p>
+          </li>
         </ul>
       </div>
     </section>
@@ -55,7 +96,9 @@
       <h2>Resume</h2>
       <div>
         <ul>
-          <li><a href="#">Links to resume</a></li>
+          <li>
+            <a href="#">Links to resume</a>
+          </li>
         </ul>
       </div>
     </section>

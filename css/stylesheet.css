@@ -1,9 +1,14 @@
 .nav-links {
+    justify-content: flex-start;
 }
+
+
 
 nav {
     display: flex;
-    justify-content: space-between;
+    
+    text-align: center;
+    font-size: 24px;
     background-color: black;
     color: rgb(247, 245, 245);
     padding: 5px;
@@ -16,4 +21,8 @@ a {
 
 a:hover {
 color: green;
+}
+
+img{
+    border-radius: 50%;
 }

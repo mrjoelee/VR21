@@ -34,6 +34,9 @@ body{
     align-items: center;
     justify-content: space-evenly;
 }
+.about-me{
+    word-wrap: break-word;
+}
 
 section h2{
     text-align: center;

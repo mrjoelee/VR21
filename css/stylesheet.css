@@ -1,3 +1,4 @@
+
 a {
     all: unset;
     cursor: pointer;
@@ -47,7 +48,7 @@ section h2{
 .img-pic{
     border-radius: 50%;
     display: flex;
-    padding: 1rem;
+    padding: 0.5rem;
     
     
 }
@@ -55,22 +56,22 @@ footer{
     background-color: black;
     color: rgb(247, 245, 245);
     border: 3px white solid;
-}
-#contact div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+    height: 30;
     
 }
-#contact div span{
+#contact div, #contact p {
+    display: flex;
+    justify-content: center;
+    
+}
+
+#contact span{
    /* border: 1px red solid; use it to understand padding and margin*/ 
     padding:0.5rem;
 }
 
-
 nav {
-    display: flex;
+    display:flex;
     align-items:center;
     text-align: center;
     font-size: 18px;

@@ -1,17 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
+      div {
+        margin: 2em;
+        padding: 1em;
+        background-color: lightblue;
+        color: blue;
+        outline: 1pt solid green;
+        outline-offset: 2px;
+        width: 25%;
+        max-width: 15em;
+        min-width: 10em;
+        box-sizing: border-box;
+        height: 10em;
+        /* - - - = displays it like that*/
+        /* display: inline-block; */
+        position: static;
+      }
 
+      div:hover {
+        outline-width: 6pt;
+      }
+
+      body {
+        font-size: 12pt;
+        /* display: flex; */
+        /*along main axis*/
+        /* justify-content: space-between; */
+      }
+      p {
+        /* position: absolute; */
+        /*no relation to it's parent*/
+        position: fixed;
+        top: 100px;
+        left:100px
+      }
     </style>
     <title>Box Model</title>
-</head>
-<body>
-    <div>
-        Box
-    </div>
-</body>
+  </head>
+  <body>
+    <div><p>Box1</p></div>
+    <div>Box2</div>
+    <div>Box3</div>
+  </body>
 </html>

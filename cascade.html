@@ -4,11 +4,60 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      #target {
+        font-style: italic;
+        font-weight: normal;
+      }
+      p {
+        font-weight: normal;
+      }
+      .urgent {
+        color: red;
+        font-weight: bold;
+      }
+      div {
+        background-color: #e0e0e0;
+      }
+      body {
+        margin: 2em;
+      }
+
+      /*descendant selector- all paragraph inside the div*/
+      /* div p {
+        font-size: larger;
+      } */
+
+      /* adjacent sibling (for example start of a paragraph in a Chapter book)
+      h2 + p*/
+
+      /*direct children */
+      div > p {
+        font-size: larger;
+      }
+      a {
+        /*get rids of the underline of the a href*/
+        text-decoration: none;
+      }
+
+      /*pseudo class*/
+      a:hover {
+        /*when hover it shows a underline on the a href */
+        text-decoration: underline;
+      }
+      /*paragraph of the first child of it's parent - the 1st two <p> of the div*/
+      p:first-child {
+        font-family: "Courier New", Courier, monospace;
+      }
+    </style>
     <title>Document</title>
   </head>
   <body>
     <div>
-      <p>What will this look like?</p>
+      <p id="target">What will this look like?</p>
+      <a href="#target"><p>Another paragraph inside the div.</p></a>
     </div>
+    <p>This is a second paragraph</p>
+    <p class="urgent">This is very very very urgent</p>
   </body>
 </html>

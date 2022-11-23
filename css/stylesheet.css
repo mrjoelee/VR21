@@ -82,12 +82,12 @@ nav {
 }
 
 .nav-links {
-    width: 100%;
-    justify-content: space-between;
+    width: 90%;
+    justify-content: space-around;
 
 }
 
 .nav-links a {
-    padding-left: 14rem;
+    padding-left: 2rem;
     
 }

@@ -1,3 +1,10 @@
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+    min-width: 50%;
+    max-width: 50%;
+}
 
 a {
     all: unset;
@@ -5,14 +12,18 @@ a {
 }
 
 a:hover {
-color: green;
+color: rgb(29,221,189);;
 }
 
-ul{
+h2{
+    font-size: 2.5rem;
+}
+
+div{
     list-style: none;
 }
 
-#portfolio ul, #resume ul{
+#portfolio div, #resume div{
     display:flex;
     align-items: center;
     justify-content: space-evenly;
@@ -21,8 +32,11 @@ ul{
 }
 
 body{
-    background: linear-gradient(to right,#D3D3D3,#2D3436);
     font-family: Arial, Helvetica, sans-serif;
+}
+
+section{
+    background-color: white;
 }
 
 #portfolio p{
@@ -46,18 +60,27 @@ section h2{
 
 
 .img-pic{
+    display: flex;
+    padding: 0.5rem;
+    width: 15rem;
+}
+
+.img-pic1{
     border-radius: 50%;
     display: flex;
     padding: 0.5rem;
-    
-    
+    width: 60px;
 }
 footer{
-    background-color: black;
-    color: rgb(247, 245, 245);
-    border: 3px white solid;
+    color: black;
     height: 30;
-    
+    background: linear-gradient(to right,#dba6a6,#ca4423);
+    box-shadow: 0 50vh 0 50vh #000;
+}
+footer h2{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
 }
 #contact div, #contact p {
     display: flex;
@@ -65,7 +88,7 @@ footer{
     
 }
 
-#contact span{
+#contact div{
    /* border: 1px red solid; use it to understand padding and margin*/ 
     padding:0.5rem;
 }
@@ -75,9 +98,8 @@ nav {
     align-items:center;
     text-align: center;
     font-size: 18px;
-    background-color: black;
     color: rgb(247, 245, 245);
-    border: 3px white solid;
+    background: linear-gradient(to right,#dba6a6,#ca4423)
 
 }
 

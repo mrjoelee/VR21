@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/stylesheet.css" />
+    <link rel="stylesheet" href="css/stylesheet2.css" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
@@ -20,111 +21,106 @@
     <title>Joe's Portfolio</title>
   </head>
   <body>
-    <nav>
-      <a href="#">
-        <img class="img-pic" width="100px" src="images/logo.png" />
-      </a>
-      <div class="nav-links">
-        <a href="#">Home</a>
-        <a href="#about">About</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#resume">Resume</a>
-        <a href="#contact">Contact Me</a>
-      </div>
-    </nav>
-    <section id="about">
-      <h2>About Me...</h2>
+    <header>
+      <nav>
+        <a class="logo" href="#">
+          <img src="images/logo.png" />
+        </a>
+        <!-- nav-links is the child of nav tag on line 25 -->
+        <div class="nav-links">
+          <a href="#">Home</a>
+          <a href="#about">About</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#resume">Resume</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+    <section id="about">      
       <div class="about-container">
-        <div>
+        <h2>About Me...</h2>
+        <div class="about-wrapper">
+          <div class="profile-pic">
           <img
-            class="img-pic"
-            width="300px"
             src="https://ca.slack-edge.com/E015GUGD2V6-U045APU3J4R-889927eefc7b-512"
             alt="Joe"
           />
         </div>
-        <p class="about-me">
-          Joe Lee | Army Veteran | Software Engineer | <br />
-        </p>
+        <div class="about-me">
+          <h4> Joe Lee </h4> <br>
+          Army Veteran 🤙, Software Engineer👍 <br />
+          Love learning new stuffs, 
+        </div>
       </div>
+        </div>
+        
     </section>
     <section id="portfolio">
       <h2>Portfolio</h2>
       <div class="project">
-        <ul>
-          <li>
-            <a
-              target="_blank"
-              href="https://github.com/mrjoelee/RamenOkidoki.git"
-            >
-              <img
-                width="500px"
-                height="300px"
-                alt="RamenOkidoki"
-                src="https://user-images.githubusercontent.com/90262428/180697547-ec9d6995-ff71-46f6-8d57-0ff039c628f3.png"
-              />
-            </a>
-            <p><strong>Ramen Okidoki</strong></p>
-            <p>A Beta Restaurant WebSite with C#, ASP.NET MVC, MSSQL</p>
-          </li>
-          <li>
-            <a
-              target="_blank"
-              href="https://github.com/mrjoelee/TestYourJavaBeans"
-            >
-              <img
-                width="700px"
-                height="300px"
-                src="https://user-images.githubusercontent.com/90262428/203213923-3bfd58f5-df1e-43f0-98f9-5ce342fc0319.png"
-              />
-            </a>
-            <p><strong>TestYourJavaBeans</strong></p>
-            <p>Java Consoled App Trivia</p>
-          </li>
-          <li>
-            <a
-              target="_blank"
-              href="https://github.com/mrjoelee/SquidGamePingPong"
-            >
-              <video
-                width="500px"
-                height="300px"
-                src="https://user-images.githubusercontent.com/90262428/203215802-0ad0f01f-f3c3-4924-88f1-9c5ec75cfc62.mp4"
-              ></video>
-            </a>
-            <p><strong>2D-SquidGame-PingPong</strong></p>
-            <p>C#, Unity</p>
-          </li>
-        </ul>
+        <div class="project-pic">
+          <a
+            target="_blank"
+            href="https://github.com/mrjoelee/RamenOkidoki.git"
+          >
+            <img
+              
+              alt="RamenOkidoki"
+              src="https://user-images.githubusercontent.com/90262428/180697547-ec9d6995-ff71-46f6-8d57-0ff039c628f3.png"
+            />
+          </a>
+          <p><strong>Ramen Okidoki</strong></p>
+          <p>A Beta Restaurant WebSite with C#, ASP.NET MVC, MSSQL</p>
+        </div>
+        <div class="project-pic">
+          <a
+            target="_blank"
+            href="https://github.com/mrjoelee/TestYourJavaBeans"
+          >
+            <img
+              src="https://user-images.githubusercontent.com/90262428/203213923-3bfd58f5-df1e-43f0-98f9-5ce342fc0319.png"
+            />
+          </a>
+          <p><strong>TestYourJavaBeans</strong></p>
+          <p>Java Consoled App Trivia</p>
+        </div>
+        <div class="project-pic">
+          <a
+            target="_blank"
+            href="https://github.com/mrjoelee/SquidGamePingPong"
+          >
+            <video
+              src="https://user-images.githubusercontent.com/90262428/203215802-0ad0f01f-f3c3-4924-88f1-9c5ec75cfc62.mp4"
+            ></video>
+          </a>
+          <p><strong>2D-SquidGame-PingPong</strong></p>
+          <p>C#, Unity</p>
+        </div>
       </div>
     </section>
     <section id="resume">
       <h2>Resume</h2>
       <div>
-        <ul>
-          <li>
-            <a href="#">Links to resume</a>
-          </li>
-        </ul>
+        <div>
+          <input type="button" name="button" value="Contact For Resume" />
+        </div>
       </div>
     </section>
-    <section id="contact">
-      <footer>
-        <h2>Contact Me</h2>
-        <p>2022 &copy; mrjoelee</p>
+    <footer id="contact">
+      <h2>Contact</h2>
+      <p>2022 &copy; mrjoelee</p>
+      <div>
         <div>
-          <span>
-            <a target="_blank" href="https://www.linkedin.com/in/mrjoelee/">
-              <i class="fab fa-linkedin-in fa-2x"></i>
-            </a>
-          </span>
-          <span>
-            <a target="_blank" href="http://www.github.com/mrjoelee">
-              <i class="fa-brands fa-github fa-2x"></i>
-            </a>
-          </span>
+          <a target="_blank" href="https://www.linkedin.com/in/mrjoelee/">
+            <i class="fab fa-linkedin-in fa-2x"></i>
+          </a>
         </div>
-      </footer>
-    </section>
+        <div>
+          <a target="_blank" href="http://www.github.com/mrjoelee">
+            <i class="fa-brands fa-github fa-2x"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

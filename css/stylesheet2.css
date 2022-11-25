@@ -1,84 +1,85 @@
 *{
     padding: 0;
-    margin: 0;
+    margin: 0.3em;
     box-sizing: border-box;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-img, video{
-    width: 100%;
-}
-
-a {
-    all: unset;
-    cursor: pointer;
-}
-
-a:hover{
-    color: rgb(29,221,189);;
-}
-
-section h2{
-    text-align: center;
-}
-
-header{
-    background-color: red;
-    padding: 0.5rem;
-}
-
-header nav{
-    display: flex;
-    align-items: center;
-
-}
-
-header nav .nav-links{
-
-    flex: 1;
-    display: flex;
-    justify-content:space-around;
-}
-
-.logo {
-    display: block;
-    width: 4em;
-}
-
-.logo img {
-    border-radius: 50%;
-}
-
-.profile-pic {
-    width: 20em;
+    font-size: large;
 }
 
 .profile-pic img{
+border-radius: 50%;
+}
+
+a{
+    all:unset;
+    cursor:pointer;
+}
+a:hover{
+    color: red;
+}
+
+.logo img{
     border-radius: 50%;
+    width: 5rem;
+    padding: 0.1em;
 }
 
-#about .about-wrapper{
-    display: flex;
-    justify-content: center;
+ footer, section h2{
+    /* padding-top: 2rem; */
+    text-align: center;
+    font-size: 24pt;
 }
 
-#about .about-container{
-    display: flex;
-    justify-content: center;
-    background-color: rgb(212, 80, 18);
-    max-width: 1200px;
-    padding: 2rem;
+.about h4{
+    font-size: 18pt;
 }
 
-#about .about-container .about-me{
-    font-size: 14pt;
-    margin: 4rem;
-    color: pink;
+.container, header nav{
+    display:flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-evenly;
+    /* padding-left:2rem ; */
+}
+
+.container div{
+    padding: 1rem;
+    padding-top: 1rem;
+}
+
+.container img, video{
+    width: 100%;
+}
+
+nav, footer{
+    color: white;
+    background: linear-gradient(#1100ff, rgb(5, 5, 5));
 }
 
 
+body{
+    background-color: white;
+}
 
 
+section .container{
+    background-color: white;
+}
 
-.project-pic{
-    width: 40%;
+footer h2{
+    font-size: 24pt;
+    padding-top: 0.1em;
+}
+
+i{
+   padding-bottom: 0.1em;
+}
+
+input {
+    border-radius: 0.5rem;
+    background-color: blue;
+    color: white;
+}
+input:hover{
+    color: red;
 }

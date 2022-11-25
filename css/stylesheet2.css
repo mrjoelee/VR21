@@ -2,7 +2,7 @@
     padding: 0;
     margin: 0.3em;
     box-sizing: border-box;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family:'Open Sans';
     font-size: large;
 }
 
@@ -28,10 +28,12 @@ a:hover{
     /* padding-top: 2rem; */
     text-align: center;
     font-size: 24pt;
+    color:white;
 }
 
 .about h4{
     font-size: 18pt;
+    color: white;
 }
 
 .container, header nav{
@@ -51,24 +53,29 @@ a:hover{
     width: 100%;
 }
 
-nav, footer{
+nav{
     color: white;
     background: linear-gradient(#1100ff, rgb(5, 5, 5));
 }
 
+footer{
+    background: linear-gradient(rgb(5, 5, 5),#1100ff);
+}
+
 
 body{
-    background-color: white;
+    background-image: url("https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1120&q=80");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: black;
 }
 
-
-section .container{
-    background-color: white;
-}
 
 footer h2{
     font-size: 24pt;
     padding-top: 0.1em;
+    color: white;
 }
 
 i{
@@ -78,8 +85,8 @@ i{
 
 input {
     border-radius: 0.5rem;
-    background-color: blue;
-    color: white;
+    background-color: white;
+    color: black;
 }
 input:hover{
     color: red;
@@ -88,3 +95,8 @@ input:hover{
 .copyright{
     font-size: 8pt;
 }
+p{
+    color:white;
+}
+
+/* clamp(1st - minimum no matter what the size is the e.g font, 2nd how much you want it to grow by, 3rd maximum size) */

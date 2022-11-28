@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family:'Open Sans';
     font-size: large;
+    
 }
 
 .profile-pic img{
@@ -41,11 +42,6 @@ a:hover, input:hover, button:hover{
     color:#9d284c;
 }
 
-.about h4{
-    font-size: 18pt;
-    color: white;
-}
-
 .container, header nav{
     display:flex;
     align-items: center;
@@ -56,12 +52,13 @@ a:hover, input:hover, button:hover{
 
 .container div{
     padding: 1rem;
-    padding-top: rem;
 }
 
-.container img, video{
-    width: 90%;
+.container img,video{
+    width: 100%;
 }
+
+
 
 nav{
     color: white;

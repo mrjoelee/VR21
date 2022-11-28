@@ -60,7 +60,7 @@ a:hover, input:hover, button:hover{
 }
 
 .container img, video{
-    width: 80%;
+    width: 90%;
 }
 
 nav{
@@ -112,10 +112,14 @@ button{
 }
 
 .about img {
-    width: 100%;
-    border-radius: 20px;
+    width: 70%;
+    border-radius: 10px;
+    opacity: 0.5;
 }
 
+.about img:hover{
+    opacity: 1.0;
+}
 .copyright{
     font-size: 8pt;
 }

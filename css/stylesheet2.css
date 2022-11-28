@@ -10,6 +10,11 @@
 border-radius: 50%;
 }
 
+i{
+   padding-bottom: 0.1em;
+   
+}
+
 p{
     color:#b9cd6c;
 }
@@ -90,10 +95,7 @@ footer h2{
     padding-top: 0.1em;
 }
 
-i{
-   padding-bottom: 0.1em;
-   
-}
+
 
 input{
     background: linear-gradient(#36115f,black);
@@ -112,8 +114,6 @@ button{
 .about img {
     width: 100%;
 }
-
-
 
 .copyright{
     font-size: 8pt;

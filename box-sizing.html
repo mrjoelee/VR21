@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        img{
+            width:100%;
+        }
+      /*content size remain the same while border-box size grows as padding and border grow*/
+      /*border-box width = width of content + 
+      left padding + right padding + left border + right border*/
+      .content-box {
+        box-sizing: content-box;
+        width: 100px;
+        padding: 1rem;
+        border: solid 5px black;
+
+      }
+
+      /* the size border-box remains the same while size of content decreases
+        as padding and border grow*/
+      /*calculation of width = border + padding + width of element*/
+
+      .border-box {
+        box-sizing: border-box;
+        width: 100px;
+        padding: 1rem;
+        border: solid 5px black;
+        position: absolute;
+        top: 0;
+        background-color: red;
+      }
+
+      .border-box:hover {
+        opacity: 0;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="content-box">
+      <img
+        src="https://variety.com/wp-content/uploads/2022/11/snoop.jpg?w=681&h=383&crop=1"
+        alt=""
+      />
+    </div>
+    <div class="border-box">
+      <img
+        src="https://nationaltoday.com/wp-content/uploads/2022/10/27-Janet-Jackson-640x514.jpg"
+        alt=""
+      />
+    </div>
+  </body>
+</html>

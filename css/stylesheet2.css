@@ -11,11 +11,11 @@ border-radius: 50%;
 }
 
 
-a{
+a, input, button{
     all:unset;
     cursor:pointer;
 }
-a:hover{
+a:hover, input:hover, button:hover{
     color: red;
 }
 
@@ -47,7 +47,7 @@ a:hover{
 
 .container div{
     padding: 1rem;
-    padding-top: 1rem;
+    padding-top: rem;
 }
 
 .container img, video{
@@ -69,7 +69,7 @@ body{
 }
 /*using the div that contains all like a replacement for body, 
 since body itself covers the entire page. so we can have a border outside of it.*/
-.older{
+.body-filter{
     background-image: url("https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1120&q=80");
     background-position: center;
     background-repeat: no-repeat;
@@ -90,19 +90,28 @@ i{
    
 }
 
-input {
-    border-radius: 0.5rem;
-    background-color: white;
-    color: black;
-    font-size:10pt;
+input{
+    background: linear-gradient(rgb(0, 0, 0),blue);
+    font-size:12pt;
+    border-radius: 1rem;
+    padding: 0.3rem;
 }
-input:hover{
-    color: red;
+
+button{
+    background: linear-gradient(#41536a, black);
+    color:white;
+    border-radius: 1rem;
+    padding: 0.3rem;
 }
+
+
+
+
 
 .copyright{
     font-size: 8pt;
 }
+
 p{
     color:white;
 }

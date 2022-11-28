@@ -97,8 +97,8 @@ footer h2{
 input{
     background: linear-gradient(#36115f,black);
     font-size:12pt;
-    border-radius: 1rem;
-    padding: 0.3rem;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
 }
 
 button{

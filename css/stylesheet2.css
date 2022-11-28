@@ -113,6 +113,7 @@ button{
 
 .about img {
     width: 100%;
+    border-radius: 20px;
 }
 
 .copyright{

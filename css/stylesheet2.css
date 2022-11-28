@@ -10,13 +10,17 @@
 border-radius: 50%;
 }
 
+p{
+    color:#b9cd6c;
+}
 
 a, input, button{
     all:unset;
     cursor:pointer;
+    color: #dbc1b0;
 }
 a:hover, input:hover, button:hover{
-    color: red;
+    color: #b9cd6c;
 }
 
 .logo img{
@@ -29,7 +33,7 @@ a:hover, input:hover, button:hover{
     /* padding-top: 2rem; */
     text-align: center;
     font-size: 18pt;
-    color:white;
+    color:#9d284c;
 }
 
 .about h4{
@@ -56,11 +60,11 @@ a:hover, input:hover, button:hover{
 
 nav{
     color: white;
-    background: linear-gradient(#1100ff, rgb(5, 5, 5));
+    background: linear-gradient(#36115f, rgb(5, 5, 5));
 }
 
 footer{
-    background: linear-gradient(rgb(5, 5, 5),#1100ff);
+    background: linear-gradient(rgb(5, 5, 5),#36115f);
 }
 
 
@@ -70,19 +74,20 @@ body{
 /*using the div that contains all like a replacement for body, 
 since body itself covers the entire page. so we can have a border outside of it.*/
 .body-filter{
-    background-image: url("https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1120&q=80");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    /* background-image: url("https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1120&q=80"); */
+    /* background-position: center;
+    background-repeat: no-repeat; */
     background-color: black;
     margin:1rem;
+    /* background-image: url(../images/background.JPG);
+    background-position:   right 25% ; */
+    
 }
 
 
 footer h2{
     font-size: 18pt;
     padding-top: 0.1em;
-    color: white;
 }
 
 i{
@@ -91,20 +96,22 @@ i{
 }
 
 input{
-    background: linear-gradient(rgb(0, 0, 0),blue);
+    background: linear-gradient(#36115f,black);
     font-size:12pt;
     border-radius: 1rem;
     padding: 0.3rem;
 }
 
 button{
-    background: linear-gradient(#41536a, black);
-    color:white;
+    background: linear-gradient(black, #36115f);
+    color: #dbc1b0;
     border-radius: 1rem;
     padding: 0.3rem;
 }
 
-
+.about img {
+    width: 100%;
+}
 
 
 
@@ -112,8 +119,6 @@ button{
     font-size: 8pt;
 }
 
-p{
-    color:white;
-}
+
 
 /* clamp(1st - minimum no matter what the size is the e.g font, 2nd how much you want it to grow by, 3rd maximum size) */

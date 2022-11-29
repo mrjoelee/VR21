@@ -32,6 +32,10 @@
         background-color: white;
         height: 150px;
         width: 150;
+        top:100px;
+        bottom:300px;
+        
+        
         
     }
 }

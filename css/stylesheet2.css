@@ -123,8 +123,9 @@ button{
 
 @media screen and (max-width: 460px) {
     .container, header nav{
-        display:block;
+        display:grid;
         text-align: center;
+        font-size:14pt;
         /* padding-left:2rem ; */
     }
 
@@ -135,7 +136,7 @@ button{
 
         .logo img{
             border-radius: 60%;
-            width: 80%;
+            width: 30%;
             padding: 1em;
             
         }

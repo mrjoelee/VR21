@@ -121,7 +121,7 @@ button{
     font-size: 8pt;
 }
 
-@media screen and (max-width: 428px) {
+@media screen and (max-width: 460px) {
     .container, header nav{
         display:block;
         text-align: center;

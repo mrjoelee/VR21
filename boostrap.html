@@ -25,7 +25,7 @@
 
   <!-- TODO: -->
 
-  <!--  Add a navbar with a button that says "Add" -->
+  <!--  Add a navbar with a button that says "Add" --> 
   <!-- when add button is clicked a modal will appear with a form to add new data -->
   <!-- Form should have an input for image, title and description -->
   <!-- add save button to add form  -->
@@ -60,9 +60,6 @@
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">
-                    Modal title
-                  </h1>
                   <button
                     type="button"
                     class="btn-close"
@@ -73,38 +70,24 @@
                 <div class="modal-body">
                   <form>
                     <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label"
-                        >Email address</label
-                      >
-                      <input
-                        type="email"
-                        class="form-control"
-                        id="exampleInputEmail1"
-                        aria-describedby="emailHelp"
-                      />
-                      <div id="emailHelp" class="form-text">
-                        We'll never share your email with anyone else.
-                      </div>
+                      <label for="title" class="form-label">Title</label>
+                      <input type="title" class="form-control" id="title" />
                     </div>
                     <div class="mb-3">
-                      <label for="exampleInputPassword1" class="form-label"
-                        >Password</label
+                      <label for="description" class="form-label"
+                        >Description</label
                       >
                       <input
-                        type="password"
+                        type="description"
                         class="form-control"
-                        id="exampleInputPassword1"
+                        id="description"
                       />
                     </div>
-                    <div class="mb-3 form-check">
-                      <input
-                        type="checkbox"
-                        class="form-check-input"
-                        id="exampleCheck1"
-                      />
-                      <label class="form-check-label" for="exampleCheck1"
-                        >Check me out</label
+                    <div class="mb-3">
+                      <label for="formFile" class="form-label"
+                        >Please upload image</label
                       >
+                      <input class="form-control" type="file" id="formFile" />
                     </div>
                     <button type="submit" class="btn btn-primary">
                       Submit
@@ -146,7 +129,75 @@
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
               </p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+
+              <!-- update button -->
+              <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updateModal">
+                Update
+              </button>
+              <!-- Modal -->
+              <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="updateModalLabel">Please enter new info</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                              <label for="title" class="form-label">Title</label>
+                              <input type="title" class="form-control" id="title" />
+                            </div>
+                            <div class="mb-3">
+                              <label for="description" class="form-label"
+                                >Description</label
+                              >
+                              <input
+                                type="description"
+                                class="form-control"
+                                id="description"
+                              />
+                            </div>
+                            <div class="mb-3">
+                              <label for="formFile" class="form-label"
+                                >Please upload image</label
+                              >
+                              <input class="form-control" type="file" id="formFile" />
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                              Submit
+                            </button>
+                          </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                      <button type="button" class="btn btn-warning">Update</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               <!-- delete button -->
+               <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                Delete
+              </button>
+              <!-- Modal -->
+              <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="deleteModalLabel">Confirmation</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you would like to delete?
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                      <button type="button" class="btn btn-danger">Delete</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -163,7 +214,74 @@
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
               </p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+               <!-- update button -->
+               <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updateModal">
+                Update
+              </button>
+              <!-- Modal -->
+              <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="updateModalLabel">Please enter new info</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                              <label for="title" class="form-label">Title</label>
+                              <input type="title" class="form-control" id="title" />
+                            </div>
+                            <div class="mb-3">
+                              <label for="description" class="form-label"
+                                >Description</label
+                              >
+                              <input
+                                type="description"
+                                class="form-control"
+                                id="description"
+                              />
+                            </div>
+                            <div class="mb-3">
+                              <label for="formFile" class="form-label"
+                                >Please upload image</label
+                              >
+                              <input class="form-control" type="file" id="formFile" />
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                              Submit
+                            </button>
+                          </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                      <button type="button" class="btn btn-warning">Update</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               <!-- delete button -->
+               <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                Delete
+              </button>
+              <!-- Modal -->
+              <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="deleteModalLabel">Confirmation</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you would like to delete?
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                      <button type="button" class="btn btn-danger">Delete</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -180,7 +298,74 @@
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
               </p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+               <!-- update button -->
+               <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updateModal">
+                Update
+              </button>
+              <!-- Modal -->
+              <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="updateModalLabel">Please enter new info</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                              <label for="title" class="form-label">Title</label>
+                              <input type="title" class="form-control" id="title" />
+                            </div>
+                            <div class="mb-3">
+                              <label for="description" class="form-label"
+                                >Description</label
+                              >
+                              <input
+                                type="description"
+                                class="form-control"
+                                id="description"
+                              />
+                            </div>
+                            <div class="mb-3">
+                              <label for="formFile" class="form-label"
+                                >Please upload image</label
+                              >
+                              <input class="form-control" type="file" id="formFile" />
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                              Submit
+                            </button>
+                          </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                      <button type="button" class="btn btn-warning">Update</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               <!-- delete button -->
+               <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                Delete
+              </button>
+              <!-- Modal -->
+              <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="deleteModalLabel">Confirmation</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you would like to delete?
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                      <button type="button" class="btn btn-danger">Delete</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -197,7 +382,74 @@
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
               </p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+               <!-- update button -->
+               <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updateModal">
+                Update
+              </button>
+              <!-- Modal -->
+              <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="updateModalLabel">Please enter new info</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                              <label for="title" class="form-label">Title</label>
+                              <input type="title" class="form-control" id="title" />
+                            </div>
+                            <div class="mb-3">
+                              <label for="description" class="form-label"
+                                >Description</label
+                              >
+                              <input
+                                type="description"
+                                class="form-control"
+                                id="description"
+                              />
+                            </div>
+                            <div class="mb-3">
+                              <label for="formFile" class="form-label"
+                                >Please upload image</label
+                              >
+                              <input class="form-control" type="file" id="formFile" />
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                              Submit
+                            </button>
+                          </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                      <button type="button" class="btn btn-warning">Update</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               <!-- delete button -->
+               <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                Delete
+              </button>
+              <!-- Modal -->
+              <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="deleteModalLabel">Confirmation</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you would like to delete?
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                      <button type="button" class="btn btn-danger">Delete</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -216,7 +468,74 @@
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
               </p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+               <!-- update button -->
+               <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updateModal">
+                Update
+              </button>
+              <!-- Modal -->
+              <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="updateModalLabel">Please enter new info</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                              <label for="title" class="form-label">Title</label>
+                              <input type="title" class="form-control" id="title" />
+                            </div>
+                            <div class="mb-3">
+                              <label for="description" class="form-label"
+                                >Description</label
+                              >
+                              <input
+                                type="description"
+                                class="form-control"
+                                id="description"
+                              />
+                            </div>
+                            <div class="mb-3">
+                              <label for="formFile" class="form-label"
+                                >Please upload image</label
+                              >
+                              <input class="form-control" type="file" id="formFile" />
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                              Submit
+                            </button>
+                          </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                      <button type="button" class="btn btn-warning">Update</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               <!-- delete button -->
+               <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                Delete
+              </button>
+              <!-- Modal -->
+              <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="deleteModalLabel">Confirmation</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you would like to delete?
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                      <button type="button" class="btn btn-danger">Delete</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -233,7 +552,74 @@
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
               </p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+               <!-- update button -->
+               <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updateModal">
+                Update
+              </button>
+              <!-- Modal -->
+              <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="updateModalLabel">Please enter new info</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                              <label for="title" class="form-label">Title</label>
+                              <input type="title" class="form-control" id="title" />
+                            </div>
+                            <div class="mb-3">
+                              <label for="description" class="form-label"
+                                >Description</label
+                              >
+                              <input
+                                type="description"
+                                class="form-control"
+                                id="description"
+                              />
+                            </div>
+                            <div class="mb-3">
+                              <label for="formFile" class="form-label"
+                                >Please upload image</label
+                              >
+                              <input class="form-control" type="file" id="formFile" />
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                              Submit
+                            </button>
+                          </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                      <button type="button" class="btn btn-warning">Update</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               <!-- delete button -->
+               <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                Delete
+              </button>
+              <!-- Modal -->
+              <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="deleteModalLabel">Confirmation</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you would like to delete?
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                      <button type="button" class="btn btn-danger">Delete</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -250,7 +636,74 @@
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
               </p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+               <!-- update button -->
+               <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updateModal">
+                Update
+              </button>
+              <!-- Modal -->
+              <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="updateModalLabel">Please enter new info</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                              <label for="title" class="form-label">Title</label>
+                              <input type="title" class="form-control" id="title" />
+                            </div>
+                            <div class="mb-3">
+                              <label for="description" class="form-label"
+                                >Description</label
+                              >
+                              <input
+                                type="description"
+                                class="form-control"
+                                id="description"
+                              />
+                            </div>
+                            <div class="mb-3">
+                              <label for="formFile" class="form-label"
+                                >Please upload image</label
+                              >
+                              <input class="form-control" type="file" id="formFile" />
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                              Submit
+                            </button>
+                          </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                      <button type="button" class="btn btn-warning">Update</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               <!-- delete button -->
+               <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                Delete
+              </button>
+              <!-- Modal -->
+              <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="deleteModalLabel">Confirmation</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you would like to delete?
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                      <button type="button" class="btn btn-danger">Delete</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -267,7 +720,74 @@
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
               </p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+               <!-- update button -->
+               <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updateModal">
+                Update
+              </button>
+              <!-- Modal -->
+              <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="updateModalLabel">Please enter new info</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                              <label for="title" class="form-label">Title</label>
+                              <input type="title" class="form-control" id="title" />
+                            </div>
+                            <div class="mb-3">
+                              <label for="description" class="form-label"
+                                >Description</label
+                              >
+                              <input
+                                type="description"
+                                class="form-control"
+                                id="description"
+                              />
+                            </div>
+                            <div class="mb-3">
+                              <label for="formFile" class="form-label"
+                                >Please upload image</label
+                              >
+                              <input class="form-control" type="file" id="formFile" />
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                              Submit
+                            </button>
+                          </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                      <button type="button" class="btn btn-warning">Update</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               <!-- delete button -->
+               <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                Delete
+              </button>
+              <!-- Modal -->
+              <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="deleteModalLabel">Confirmation</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you would like to delete?
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                      <button type="button" class="btn btn-danger">Delete</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -286,7 +806,74 @@
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
               </p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+               <!-- update button -->
+               <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updateModal">
+                Update
+              </button>
+              <!-- Modal -->
+              <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="updateModalLabel">Please enter new info</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                              <label for="title" class="form-label">Title</label>
+                              <input type="title" class="form-control" id="title" />
+                            </div>
+                            <div class="mb-3">
+                              <label for="description" class="form-label"
+                                >Description</label
+                              >
+                              <input
+                                type="description"
+                                class="form-control"
+                                id="description"
+                              />
+                            </div>
+                            <div class="mb-3">
+                              <label for="formFile" class="form-label"
+                                >Please upload image</label
+                              >
+                              <input class="form-control" type="file" id="formFile" />
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                              Submit
+                            </button>
+                          </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                      <button type="button" class="btn btn-warning">Update</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               <!-- delete button -->
+               <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                Delete
+              </button>
+              <!-- Modal -->
+              <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="deleteModalLabel">Confirmation</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you would like to delete?
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                      <button type="button" class="btn btn-danger">Delete</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -303,7 +890,74 @@
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
               </p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <!-- update button -->
+              <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updateModal">
+                Update
+              </button>
+              <!-- Modal -->
+              <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="updateModalLabel">Please enter new info</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                              <label for="title" class="form-label">Title</label>
+                              <input type="title" class="form-control" id="title" />
+                            </div>
+                            <div class="mb-3">
+                              <label for="description" class="form-label"
+                                >Description</label
+                              >
+                              <input
+                                type="description"
+                                class="form-control"
+                                id="description"
+                              />
+                            </div>
+                            <div class="mb-3">
+                              <label for="formFile" class="form-label"
+                                >Please upload image</label
+                              >
+                              <input class="form-control" type="file" id="formFile" />
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                              Submit
+                            </button>
+                          </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                      <button type="button" class="btn btn-warning">Update</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               <!-- delete button -->
+               <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                Delete
+              </button>
+              <!-- Modal -->
+              <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="deleteModalLabel">Confirmation</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you would like to delete?
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                      <button type="button" class="btn btn-danger">Delete</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -320,7 +974,74 @@
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
               </p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+               <!-- update button -->
+               <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updateModal">
+                Update
+              </button>
+              <!-- Modal -->
+              <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="updateModalLabel">Please enter new info</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                              <label for="title" class="form-label">Title</label>
+                              <input type="title" class="form-control" id="title" />
+                            </div>
+                            <div class="mb-3">
+                              <label for="description" class="form-label"
+                                >Description</label
+                              >
+                              <input
+                                type="description"
+                                class="form-control"
+                                id="description"
+                              />
+                            </div>
+                            <div class="mb-3">
+                              <label for="formFile" class="form-label"
+                                >Please upload image</label
+                              >
+                              <input class="form-control" type="file" id="formFile" />
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                              Submit
+                            </button>
+                          </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                      <button type="button" class="btn btn-warning">Update</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               <!-- delete button -->
+               <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                Delete
+              </button>
+              <!-- Modal -->
+              <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="deleteModalLabel">Confirmation</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you would like to delete?
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                      <button type="button" class="btn btn-danger">Delete</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -337,7 +1058,74 @@
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
               </p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+               <!-- update button -->
+               <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updateModal">
+                Update
+              </button>
+              <!-- Modal -->
+              <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="updateModalLabel">Please enter new info</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                              <label for="title" class="form-label">Title</label>
+                              <input type="title" class="form-control" id="title" />
+                            </div>
+                            <div class="mb-3">
+                              <label for="description" class="form-label"
+                                >Description</label
+                              >
+                              <input
+                                type="description"
+                                class="form-control"
+                                id="description"
+                              />
+                            </div>
+                            <div class="mb-3">
+                              <label for="formFile" class="form-label"
+                                >Please upload image</label
+                              >
+                              <input class="form-control" type="file" id="formFile" />
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                              Submit
+                            </button>
+                          </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                      <button type="button" class="btn btn-warning">Update</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               <!-- delete button -->
+               <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                Delete
+              </button>
+              <!-- Modal -->
+              <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="deleteModalLabel">Confirmation</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you would like to delete?
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                      <button type="button" class="btn btn-danger">Delete</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -356,7 +1144,74 @@
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
               </p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+               <!-- update button -->
+               <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updateModal">
+                Update
+              </button>
+              <!-- Modal -->
+              <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="updateModalLabel">Please enter new info</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                              <label for="title" class="form-label">Title</label>
+                              <input type="title" class="form-control" id="title" />
+                            </div>
+                            <div class="mb-3">
+                              <label for="description" class="form-label"
+                                >Description</label
+                              >
+                              <input
+                                type="description"
+                                class="form-control"
+                                id="description"
+                              />
+                            </div>
+                            <div class="mb-3">
+                              <label for="formFile" class="form-label"
+                                >Please upload image</label
+                              >
+                              <input class="form-control" type="file" id="formFile" />
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                              Submit
+                            </button>
+                          </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                      <button type="button" class="btn btn-warning">Update</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               <!-- delete button -->
+               <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                Delete
+              </button>
+              <!-- Modal -->
+              <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="deleteModalLabel">Confirmation</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you would like to delete?
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                      <button type="button" class="btn btn-danger">Delete</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -373,7 +1228,74 @@
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
               </p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+               <!-- update button -->
+               <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updateModal">
+                Update
+              </button>
+              <!-- Modal -->
+              <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="updateModalLabel">Please enter new info</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                              <label for="title" class="form-label">Title</label>
+                              <input type="title" class="form-control" id="title" />
+                            </div>
+                            <div class="mb-3">
+                              <label for="description" class="form-label"
+                                >Description</label
+                              >
+                              <input
+                                type="description"
+                                class="form-control"
+                                id="description"
+                              />
+                            </div>
+                            <div class="mb-3">
+                              <label for="formFile" class="form-label"
+                                >Please upload image</label
+                              >
+                              <input class="form-control" type="file" id="formFile" />
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                              Submit
+                            </button>
+                          </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                      <button type="button" class="btn btn-warning">Update</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               <!-- delete button -->
+               <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                Delete
+              </button>
+              <!-- Modal -->
+              <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="deleteModalLabel">Confirmation</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you would like to delete?
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                      <button type="button" class="btn btn-danger">Delete</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -390,7 +1312,74 @@
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
               </p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+               <!-- update button -->
+               <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updateModal">
+                Update
+              </button>
+              <!-- Modal -->
+              <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="updateModalLabel">Please enter new info</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                              <label for="title" class="form-label">Title</label>
+                              <input type="title" class="form-control" id="title" />
+                            </div>
+                            <div class="mb-3">
+                              <label for="description" class="form-label"
+                                >Description</label
+                              >
+                              <input
+                                type="description"
+                                class="form-control"
+                                id="description"
+                              />
+                            </div>
+                            <div class="mb-3">
+                              <label for="formFile" class="form-label"
+                                >Please upload image</label
+                              >
+                              <input class="form-control" type="file" id="formFile" />
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                              Submit
+                            </button>
+                          </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                      <button type="button" class="btn btn-warning">Update</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               <!-- delete button -->
+               <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                Delete
+              </button>
+              <!-- Modal -->
+              <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="deleteModalLabel">Confirmation</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you would like to delete?
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                      <button type="button" class="btn btn-danger">Delete</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -407,7 +1396,74 @@
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
               </p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+               <!-- update button -->
+               <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updateModal">
+                Update
+              </button>
+              <!-- Modal -->
+              <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="updateModalLabel">Please enter new info</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                              <label for="title" class="form-label">Title</label>
+                              <input type="title" class="form-control" id="title" />
+                            </div>
+                            <div class="mb-3">
+                              <label for="description" class="form-label"
+                                >Description</label
+                              >
+                              <input
+                                type="description"
+                                class="form-control"
+                                id="description"
+                              />
+                            </div>
+                            <div class="mb-3">
+                              <label for="formFile" class="form-label"
+                                >Please upload image</label
+                              >
+                              <input class="form-control" type="file" id="formFile" />
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                              Submit
+                            </button>
+                          </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                      <button type="button" class="btn btn-warning">Update</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               <!-- delete button -->
+               <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                Delete
+              </button>
+              <!-- Modal -->
+              <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="deleteModalLabel">Confirmation</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you would like to delete?
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                      <button type="button" class="btn btn-danger">Delete</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

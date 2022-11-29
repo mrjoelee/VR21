@@ -2,6 +2,19 @@
 @media (min-width:320px){
     body{
         background-color: red;
+        
+    }
+    .resize{
+     background-color: black;
+     height: 100px;
+     width: 100px;       
+    }
+
+    .resize2{
+        background-color: white;
+        height: 50px;
+        width: 50;
+        
     }
 }
 
@@ -9,11 +22,34 @@
     body{
         background-color: blue;
     }
+    .resize{
+        background-color: black;
+        height: 300px;
+        width: 300px;       
+       }
+
+       .resize2{
+        background-color: white;
+        height: 150px;
+        width: 150;
+        
+    }
 }
 
 @media (min-width:801px){
     body{
         background-color: purple;
+    }
+    .resize{
+        background-color: black;
+        height: 500px;
+        width: 500px;       
+       }
+       .resize2{
+        background-color: white;
+        height: 300px;
+        width: 300;
+        
     }
 }
 
@@ -21,10 +57,34 @@
     body{
         background-color: yellow;
     }
+
+    .resize{
+        background-color: black;
+        height: 800px;
+        width: 800px;       
+       }
+       .resize2{
+        background-color: white;
+        height: 450px;
+        width: 450px;
+        
+    }
 }
 
 @media (min-width:1281px){
     body{
         background-color: green;
+    }
+
+    .resize{
+        background-color: black;
+        height: 900px;
+        width: 900px;       
+       }
+       .resize2{
+        background-color: white;
+        height: 500px;
+        width: 500px;
+        
     }
 }

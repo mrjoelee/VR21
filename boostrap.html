@@ -23,143 +23,393 @@
     </style>
   </head>
 
+  <!-- TODO: -->
+
+  <!--  Add a navbar with a button that says "Add" -->
+  <!-- when add button is clicked a modal will appear with a form to add new data -->
+  <!-- Form should have an input for image, title and description -->
+  <!-- add save button to add form  -->
+  <!-- replace column text with cards and image and description, title and description -->
+  <!-- Each card will have an update and delete button -->
+  <!-- When update is clicked a modal is opened with form that has update inputs  and a save button -->
+  <!-- When delete button is clicked, a modal will ask "Are you sure you want to delete? - there will be two buttons that say "Confirm or Cancel"" -->
+
   <body>
+    <nav class="navbar bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand">Navbar</a>
+        <form class="d-flex" role="search">
+          <!-- Button trigger modal -->
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            Add
+          </button>
+
+          <!-- Modal -->
+          <div
+            class="modal fade"
+            id="exampleModal"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">
+                    Modal title
+                  </h1>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label"
+                        >Email address</label
+                      >
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="exampleInputEmail1"
+                        aria-describedby="emailHelp"
+                      />
+                      <div id="emailHelp" class="form-text">
+                        We'll never share your email with anyone else.
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label"
+                        >Password</label
+                      >
+                      <input
+                        type="password"
+                        class="form-control"
+                        id="exampleInputPassword1"
+                      />
+                    </div>
+                    <div class="mb-3 form-check">
+                      <input
+                        type="checkbox"
+                        class="form-check-input"
+                        id="exampleCheck1"
+                      />
+                      <label class="form-check-label" for="exampleCheck1"
+                        >Check me out</label
+                      >
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                      Submit
+                    </button>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <button type="button" class="btn btn-primary">
+                    Save changes
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </nav>
+    <!-- .row*4>.col-md-3*4>p>lorem (4 rows, inside each row colum-3 times it by 4 (to be 12))-->
+    <!-- .container>.row*4>.col-md-3*4>.card>img+div>p>lorem -->
     <div class="container">
-      <!-- .row*4>.col-md-3*4>p>lorem (4 rows, inside each row colum-3 times it by 4 (to be 12))-->
       <div class="row">
         <div class="col-md-3">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quaerat
-            ipsa velit perferendis ea nihil debitis commodi deleniti quibusdam,
-            nisi officia exercitationem dolorem blanditiis nulla nobis rerum
-            eaque! Quibusdam, excepturi.
-          </p>
+          <div class="card">
+            <img
+              src="https://via.placeholder.com/150"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
         </div>
         <div class="col-md-3">
-          <p>
-            Quod, aperiam. Quam dignissimos nam perferendis, error laboriosam
-            vero recusandae beatae magnam exercitationem esse et ullam
-            reprehenderit unde ad fugit, tempora totam, hic modi maxime nostrum
-            eum minus. Aliquid, culpa.
-          </p>
+          <div class="card">
+            <img
+              src="https://via.placeholder.com/150"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
         </div>
         <div class="col-md-3">
-          <p>
-            Necessitatibus mollitia, assumenda corporis aliquam temporibus
-            soluta explicabo perferendis consequuntur fuga porro natus. Ipsa in
-            autem, fugit numquam incidunt delectus accusantium. Temporibus porro
-            laborum deleniti, illo tempore sapiente minus! Illo?
-          </p>
+          <div class="card">
+            <img
+              src="https://via.placeholder.com/150"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
         </div>
         <div class="col-md-3">
-          <p>
-            Molestiae voluptas quas quia id in corporis hic a impedit
-            exercitationem minima vitae porro, aliquam odio expedita eligendi
-            non magni voluptates labore cumque quis velit facere! Nisi hic
-            temporibus numquam?
-          </p>
+          <div class="card">
+            <img
+              src="https://via.placeholder.com/150"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
         </div>
       </div>
       <div class="row">
         <div class="col-md-3">
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Perspiciatis assumenda odit debitis cupiditate consectetur
-            dignissimos dolore quam libero quas, ea nisi nihil quae ad placeat
-            accusantium laborum officiis natus quos.
-          </p>
+          <div class="card">
+            <img
+              src="https://via.placeholder.com/150"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
         </div>
         <div class="col-md-3">
-          <p>
-            Hic odit non, repellat ex sunt deleniti ratione aspernatur dolorum
-            iusto possimus, consequuntur deserunt voluptas. Necessitatibus ex
-            laborum maxime optio! Itaque veritatis minima distinctio optio, rem
-            maiores nam ducimus impedit.
-          </p>
+          <div class="card">
+            <img
+              src="https://via.placeholder.com/150"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
         </div>
         <div class="col-md-3">
-          <p>
-            Nulla, et distinctio placeat impedit quidem consequuntur molestias,
-            vitae asperiores ducimus debitis, nam labore voluptate excepturi
-            quasi numquam. Fugiat deleniti nostrum vitae totam quia recusandae
-            aliquam debitis officia cupiditate quam?
-          </p>
+          <div class="card">
+            <img
+              src="https://via.placeholder.com/150"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
         </div>
         <div class="col-md-3">
-          <p>
-            Cum suscipit nisi culpa architecto consequatur quisquam perspiciatis
-            hic est quaerat, explicabo eius, odio pariatur minus similique
-            necessitatibus eveniet. Voluptate officia repellendus fuga rem
-            laboriosam dolorum illo ab maxime ratione.
-          </p>
+          <div class="card">
+            <img
+              src="https://via.placeholder.com/150"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
         </div>
       </div>
       <div class="row">
         <div class="col-md-3">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
-            tenetur, labore vero vel soluta alias similique doloribus reiciendis
-            dignissimos autem quis, qui distinctio. Totam consequuntur
-            voluptates sint, non consectetur itaque!
-          </p>
+          <div class="card">
+            <img
+              src="https://via.placeholder.com/150"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
         </div>
         <div class="col-md-3">
-          <p>
-            Labore unde cum omnis aliquam eaque reiciendis vero. Magni, odio
-            numquam reiciendis veniam officia cum est, assumenda possimus
-            doloribus ducimus maxime culpa quisquam dignissimos consectetur
-            natus, ab eos optio qui?
-          </p>
+          <div class="card">
+            <img
+              src="https://via.placeholder.com/150"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
         </div>
         <div class="col-md-3">
-          <p>
-            Hic quam corrupti perferendis labore architecto vitae velit ipsum
-            consequatur adipisci, aut rem ipsam totam suscipit amet nemo porro
-            ratione sapiente tempore. Praesentium pariatur in dolores optio
-            deserunt. Minima, facilis.
-          </p>
+          <div class="card">
+            <img
+              src="https://via.placeholder.com/150"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
         </div>
         <div class="col-md-3">
-          <p>
-            Praesentium neque laudantium eveniet vitae molestiae ab mollitia
-            deleniti recusandae? Corrupti voluptatum vitae nulla ratione
-            obcaecati quibusdam quidem cupiditate. Nemo enim, sed aut
-            reprehenderit eveniet quisquam ut! Voluptas, veniam saepe?
-          </p>
+          <div class="card">
+            <img
+              src="https://via.placeholder.com/150"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
         </div>
       </div>
       <div class="row">
         <div class="col-md-3">
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat
-            blanditiis corrupti ipsum laudantium facere quas dolor quam
-            distinctio vitae adipisci accusantium ullam odio, quia officiis unde
-            neque delectus, porro ex.
-          </p>
+          <div class="card">
+            <img
+              src="https://via.placeholder.com/150"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
         </div>
         <div class="col-md-3">
-          <p>
-            Distinctio deserunt, molestiae atque modi nesciunt asperiores
-            perferendis, repellendus, ipsa explicabo quibusdam corrupti. Libero
-            nam itaque iusto, nihil quam eum quidem vero minus excepturi laborum
-            porro, velit architecto suscipit tempora!
-          </p>
+          <div class="card">
+            <img
+              src="https://via.placeholder.com/150"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
         </div>
         <div class="col-md-3">
-          <p>
-            Nemo exercitationem eveniet quidem perferendis saepe asperiores
-            beatae, sed aspernatur porro a rem ipsam dolor accusantium
-            laudantium recusandae laboriosam earum qui, aut veniam enim culpa
-            explicabo fugiat sequi! Natus, numquam.
-          </p>
+          <div class="card">
+            <img
+              src="https://via.placeholder.com/150"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
         </div>
         <div class="col-md-3">
-          <p>
-            Tenetur quo, dolorem incidunt ipsam adipisci consequatur laborum est
-            iure libero culpa at molestias rem error asperiores amet esse
-            maiores reprehenderit aliquid, quod animi voluptatem repudiandae
-            aut! Reprehenderit, consequatur soluta.
-          </p>
+          <div class="card">
+            <img
+              src="https://via.placeholder.com/150"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>

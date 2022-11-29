@@ -1,7 +1,6 @@
 *{
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
     font-family:'Open Sans';
     font-size: large;
     
@@ -54,11 +53,13 @@ a:hover, input:hover, button:hover{
     padding: 1rem;
 }
 
-.container img,video{
+.container img{
     width: 100%;
 }
 
-
+.container video{
+    width: 40%;
+}
 
 nav{
     color: white;
@@ -122,6 +123,8 @@ button{
 .copyright{
     font-size: 8pt;
 }
+
+
 
 
 

@@ -1,0 +1,29 @@
+.container{
+    padding-top: 20px;
+}
+
+.calculator-container{
+    background-color: darkgray;
+    height: 600px;
+    width: 475px;
+    border-radius: 10px;
+    padding-top:37.5px;
+
+}
+
+.calculator-display {
+    border-radius: 10px;
+    height:80px;
+    width:400px;
+    background-color: lightgreen;
+    margin: 0 auto;
+    /* polish this up */
+    padding-left: 250px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 50px;
+    padding-top: 1px;
+
+    /* justify-content: flex-end;
+    align-items: center;
+    font-size: 4em; */
+}

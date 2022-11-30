@@ -40,7 +40,7 @@
 
     Other similar operators are >= (greater than or equal to), <= (less than or equal to), == (equal to), and != (not equal to).
 
-    5. **Logical Operators**
+5. **Logical Operators**
     - The && operator represents logical and. It is a binary operator, and its result is true only if both the values given to it are true.
 
             console.log(true && false) false
@@ -51,7 +51,7 @@
             console.log(false || true) true
             console.log(false || false) false
 
-    6. **Empty Values**
+6. **Empty Values**
     - Null
     - undefined
     

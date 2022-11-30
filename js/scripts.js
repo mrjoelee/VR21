@@ -47,3 +47,23 @@ for(var i = 0; i < 11; i ++){
 }
 
 console.log("here are the 30 console logs");
+
+let upperCase = myName.toUpperCase();
+let lowerCase = myName.toLowerCase();
+
+console.log(lowerCase);
+console.log(upperCase);
+
+console.log(upperCase === "JOE");
+
+let y = 10; 
+let z = "10";
+
+// == checks for value
+console.log(y == z);
+
+//checks for data type and value if one of them is false, then false. 
+console.log(y === z); 
+
+console.log( 0 == null);
+console.log(0 === null);

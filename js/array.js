@@ -29,10 +29,10 @@ const foo = people.indexOf(`Foo`);
 console.log(foo);
 
 //Redefined people using splice, remove Devon, add Elizabeth and Artie
-let splice = people.splice(2,1,"Elizabeth", "Artie");
-console.log(splice);
+const splice = people.splice(2,1,"Elizabeth", "Artie");
+console.log(people);
 
 
 // create a new Variable withBob and concat Bob to the people of Array
-let withBob = people.concat("Bob");
+const withBob = people.concat("Bob");
 console.log(withBob);

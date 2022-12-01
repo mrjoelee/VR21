@@ -6,7 +6,7 @@ let programming = {
     jokes: "https://bit.ly/2ysFran"
   };
 
-  //write command "Go" to the end of languages array
+//write command "Go" to the end of languages array
 programming.languages.push("Go");
 console.log(programming);
 

@@ -29,8 +29,7 @@ const foo = people.indexOf(`Foo`);
 console.log(foo);
 
 //Redefined people using splice, remove Devon, add Elizabeth and Artie
-let people1 = ["Greg", "Mary", "Devon", "James"];
-let splice = people1.splice(2,1,"Elizabeth", "Artie");
+let splice = people.splice(2,1,"Elizabeth", "Artie");
 console.log(splice);
 
 

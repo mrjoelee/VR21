@@ -14,38 +14,39 @@ const randomNumber = generateRandomNum(arrChoice.length);
 const aIChoice = arrChoice[randomNumber];
 console.log(aIChoice);
 
-const alertLose = alert(`Lose. ${user.name}: ${user.choice}, Computer: ${aIChoice}`);
-const alertWin = alert(`Win. ${user.name}: ${user.choice}, Computer:${aIChoice} ` );
-const alertTie = alert(`Tied. ${user.name}: ${user.choice}, Computer:${aIChoice} `);
-const alertInvalid = alert(`${user.name}, please choose ${arrChoice}`);
-
 //determine the winner
 function didUserWin(user, aIChoice){
     //if the user chooses rock, and the computer is a paper - ai wins
-
+    console.log(user.choice);
+    console.log(aIChoice);
     if(user.choice === aIChoice){
         alert(`Tied. ${user.name}: ${user.choice}, Computer:${aIChoice} `);
         return;
     }
-    if((!user.choice || arrChoice.indexOf(user.choice) === -1)){
+    else if ((!user.choice || arrChoice.indexOf(user.choice) === -1)){
         alert(`${user.name}, please choose ${arrChoice}`);
         return;
     }
-    if(user.choice === `rock` && aIChoice === 'paper'){
+    else if (user.choice === `rock` && aIChoice === 'paper'){
         alert(`Lose. ${user.name}: ${user.choice}, Computer: ${aIChoice}`);
+        return;
 
     //user = paper, ai = rock = users wins
     } else if (user.choice === "scissors" && aIChoice === `rock`){
         alert(`Lose. ${user.name}: ${user.choice}, Computer: ${aIChoice}`);
+        return;
     //user = rock, ai = scissors, user wins    
     } else if(user.choice === `paper` && aIChoice === `scissors`){
         alert(`Lose. ${user.name}: ${user.choice}, Computer: ${aIChoice}`);
+        return;
     } else {
         alert(`Win. ${user.name}: ${user.choice}, Computer:${aIChoice} ` );
+        return;
     }
 }
 
-console.log(dispatchEvent(user,aIChoice));
+didUserWin(user,aIChoice);
+
 
 
 

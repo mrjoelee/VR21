@@ -22,31 +22,30 @@ const alertInvalid = alert(`${user.name}, please choose ${arrChoice}`);
 //determine the winner
 function didUserWin(user, aIChoice){
     //if the user chooses rock, and the computer is a paper - ai wins
+
+    if(user.choice === aIChoice){
+        alert(`Tied. ${user.name}: ${user.choice}, Computer:${aIChoice} `);
+        return;
+    }
+    if((!user.choice || arrChoice.indexOf(user.choice) === -1)){
+        alert(`${user.name}, please choose ${arrChoice}`);
+        return;
+    }
     if(user.choice === `rock` && aIChoice === 'paper'){
-         alertLose;
+        alert(`Lose. ${user.name}: ${user.choice}, Computer: ${aIChoice}`);
 
     //user = paper, ai = rock = users wins
-    } else if(user.choice ===`rock` && aIChoice === `paper`){
-         alertWin
-
-    //user = scissors ai = rock, ai wins
     } else if (user.choice === "scissors" && aIChoice === `rock`){
-         alertLose;
-
+        alert(`Lose. ${user.name}: ${user.choice}, Computer: ${aIChoice}`);
     //user = rock, ai = scissors, user wins    
-    } else if(user.choice === `rock` && aIChoice === `scissors`){
-         alertWin;
-
-    //user = rock, ai = rock = tied  
-    } else if (user.choice === aIChoice ){
-         alertTie;
-         return;
-
-    } else if (!user.choice || arrChoice.indexOf(user.choice) === -1) {
-         alertInvalid;
+    } else if(user.choice === `paper` && aIChoice === `scissors`){
+        alert(`Lose. ${user.name}: ${user.choice}, Computer: ${aIChoice}`);
+    } else {
+        alert(`Win. ${user.name}: ${user.choice}, Computer:${aIChoice} ` );
     }
-    
 }
+
+console.log(dispatchEvent(user,aIChoice));
 
 
 

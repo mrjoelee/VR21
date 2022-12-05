@@ -1,0 +1,41 @@
+
+
+
+nav{
+    color: white;
+    background: linear-gradient(#36115f, rgb(5, 5, 5));
+}
+
+footer{
+    background: linear-gradient(rgb(5, 5, 5),#36115f);
+}
+
+
+
+
+/*using the div that contains all like a replacement for body, 
+since body itself covers the entire page. so we can have a border outside of it.*/
+.body-filter{
+    /* background-image: url("https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1120&q=80"); */
+    /* background-position: center;
+    background-repeat: no-repeat; */
+    background-color: black;
+    margin:1rem;
+    /* background-image: url(../images/background.JPG);
+    background-position:   right 25% ; */
+    
+}
+
+div.col-4.text-center img.img-fluid.rounded {
+    opacity: 0.5;
+    transition: transform .5s;
+}
+
+div.col-4.text-center img.img-fluid.rounded:hover{
+    opacity: 1.0;
+    transform: scale(2.5);
+}
+
+
+
+/* clamp(1st - minimum no matter what the size is the e.g font, 2nd how much you want it to grow by, 3rd maximum size) */

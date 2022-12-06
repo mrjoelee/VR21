@@ -1,0 +1,17 @@
+
+/* Add a div around your img and text and give it a position: relative.
+To position text divs, give them each a position: 
+absolute and set their positioning by using the properties of top,
+right, bottom and left */
+
+.card {
+  position: relative;
+}
+.card-title {
+  position: absolute;
+  top: 1em;
+}
+.card-text {
+  position: absolute;
+  bottom: 4em;
+}

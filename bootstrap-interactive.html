@@ -227,43 +227,74 @@
       crossorigin="anonymous"
     ></script>
     <script>
-      // const contentCard = `
-      // <div class="col-md-3">
-      //       <div class="card">
-      //         <img
-      //           src="https://miro.medium.com/max/626/0*9kXPss-Erpgu-HI2.gif"
-      //           class="card-img-top"
-      //           alt="list"
-      //         />
-      //         <div class="card-body">
-      //           <h5 class="card-title">Listing</h5>
-      //           <p class="card-text">
-      //             The easiest and most basic hand gesture is numerical. ANY TIME
-      //             you say a number, perform the corresponding gesture.
-      //           </p>
+      //template literal way
+      document.querySelector("#add-button").addEventListener("click", (e) => {
+        const contentCard = `
+      <div class="col-md-3">
+            <div class="card">
+              <img
+                src="https://miro.medium.com/max/626/0*9kXPss-Erpgu-HI2.gif"
+                class="card-img-top"
+                alt="list"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Listing</h5>
+                <p class="card-text">
+                  The easiest and most basic hand gesture is numerical. ANY TIME
+                  you say a number, perform the corresponding gesture.
+                </p>
 
-      //           <!-- update button -->
-      //           <button
-      //             type="button"
-      //             class="btn btn-warning"
-      //             data-bs-toggle="modal"
-      //             data-bs-target="#updateModal"
-      //           >
-      //             Update
-      //           </button>
+                <!-- update button -->
+                <button
+                  type="button"
+                  class="btn btn-warning"
+                  data-bs-toggle="modal"
+                  data-bs-target="#updateModal"
+                >
+                  Update
+                </button>
 
-      //           <!-- delete button -->
-      //           <button
-      //             type="button"
-      //             class="btn btn-danger"
-      //             data-bs-toggle="modal"
-      //             data-bs-target="#deleteModal"
-      //           >
-      //             Delete
-      //           </button>
-      //         </div>
-      //       </div>
-      //     </div>`;
+                <!-- delete button -->
+                <button
+                  type="button"
+                  class="btn btn-danger"
+                  data-bs-toggle="modal"
+                  data-bs-target="#deleteModal"
+                >
+                  Delete
+                </button>
+              </div>
+            </div>
+          </div>`;
+        document
+          .querySelector(".row")
+          .insertAdjacentHTML("beforeend", contentCard);
+
+        //non-temperal way method
+        // document.querySelector(".row").append(columnCard);
+      });
+
+      //different way to use JS to get card
+      // const columCard = document.createElement("div");
+      // columCard.setAttribute("class", "col-md-3");
+
+      // const card = document.createElement("div");
+      // card.setAttribute("class", "card");
+
+      // const img = document.createElement("img");
+      // img.setAttribute(
+      //   "src",
+      //   "https://miro.medium.com/max/626/0*9kXPss-Erpgu-HI2.gif"
+      // );
+      // img.setAttribute("class", "card-img-top");
+
+      // const cardBody = document.createElement("div");
+      // cardBody.setAttribute("class", "card-body");
+
+      // card.append(img);
+      // card.append(cardBody);
+
+      // columCard.append(card);
       // document.querySelector(".row").innerHTML = contentCard;
 
       // How do I create element
@@ -274,6 +305,6 @@
       // const row = document.querySelector(".row");
       // row.append(cardColumn);
     </script>
-    <script src="./js/card.js"></script>
+    <!-- <script src="./js/card.js"></script> -->
   </body>
 </html>

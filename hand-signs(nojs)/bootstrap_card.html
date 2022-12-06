@@ -20,6 +20,18 @@
       /* .col-md-3 {
         border: solid 1px black;
       } */
+      * {
+        box-sizing: border-box;
+      }
+
+      .card {
+        height: 100%;
+        /* position: relative; */
+      }
+      /* .button {
+        position: absolute;
+        bottom: 2em;
+      } */
       .row {
         margin-bottom: 10px;
       }
@@ -40,135 +52,135 @@
   <body>
     <!-- .row*4>.col-md-3*4>p>lorem (4 rows, inside each row colum-3 times it by 4 (to be 12))-->
     <!-- .container>.row*4>.col-md-3*4>.card>img+div>p>lorem -->
-    <div class="container">
-      <header>
+
+    <header>
+      <div class="container">
+        <!-- Navbar -->
         <nav class="navbar bg-light">
           <div class="container-fluid">
             <a class="navbar-brand">Essentials Hand Signs</a>
-            <form class="d-flex" role="search">
-              <!-- Button trigger modal -->
-              <button
-                type="button"
-                class="btn btn-primary"
-                data-bs-toggle="modal"
-                data-bs-target="#createModal"
-                id="add-button"
-              >
-                Add
-              </button>
-
-              <!-- Modal -->
-              <div
-                class="modal fade"
-                id="createModal"
-                tabindex="-1"
-                aria-labelledby="createModalLabel"
-                aria-hidden="true"
-              >
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <button
-                        type="button"
-                        class="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                      ></button>
-                    </div>
-                    <div class="modal-body">
-                      <form>
-                        <div class="mb-3">
-                          <label for="title" class="form-label">Title</label>
-                          <input type="text" class="form-control" id="title" />
-                        </div>
-                        <div class="mb-3">
-                          <label for="description" class="form-label"
-                            >Description</label
-                          >
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="description"
-                          />
-                        </div>
-                        <div class="mb-3">
-                          <label for="imageUrl" class="form-label"
-                            >Image Url</label
-                          >
-                          <input
-                            class="form-control"
-                            type="url"
-                            id="imageUrl"
-                            name="url"
-                          />
-                        </div>
-                      </form>
-                    </div>
-                    <div class="modal-footer">
-                      <button
-                        type="button"
-                        class="btn btn-secondary"
-                        data-bs-dismiss="modal"
-                      >
-                        Close
-                      </button>
-                      <button type="button" class="btn btn-primary">
-                        Save
-                      </button>
-                    </div>
+            <!-- Button trigger modal -->
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#createModal"
+              id="add-button"
+            >
+              Add
+            </button>
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="createModal"
+              tabindex="-1"
+              aria-labelledby="createModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="mb-3">
+                        <label for="title" class="form-label">Title</label>
+                        <input type="text" class="form-control" id="title" />
+                      </div>
+                      <div class="mb-3">
+                        <label for="description" class="form-label"
+                          >Description</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="description"
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label for="imageUrl" class="form-label"
+                          >Image Url</label
+                        >
+                        <input
+                          class="form-control"
+                          type="url"
+                          id="imageUrl"
+                          name="url"
+                        />
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                    <button type="button" class="btn btn-primary">Save</button>
                   </div>
                 </div>
               </div>
-            </form>
+            </div>
           </div>
         </nav>
-      </header>
-      <main>
+      </div>
+    </header>
+    <main>
+      <div class="container">
         <div class="row">
-          <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="col-lg-3 col-md-4 col-sm-6 d-flex">
             <div class="card">
               <img
                 src="https://miro.medium.com/max/626/0*9kXPss-Erpgu-HI2.gif"
                 class="card-img-top"
                 alt="list"
               />
-              <div class="card-body">
+              <div class="card-body d-flex flex-column justify-content-between">
                 <h5 class="card-title">Listing</h5>
                 <p class="card-text">
                   The easiest and most basic hand gesture is numerical. ANY TIME
                   you say a number, perform the corresponding gesture.
                 </p>
+                <div>
+                  <!-- update button -->
+                  <button
+                    type="button"
+                    class="btn btn-warning"
+                    data-bs-toggle="modal"
+                    data-bs-target="#updateModal"
+                  >
+                    Update
+                  </button>
 
-                <!-- update button -->
-                <button
-                  type="button"
-                  class="btn btn-warning"
-                  data-bs-toggle="modal"
-                  data-bs-target="#updateModal"
-                >
-                  Update
-                </button>
-
-                <!-- delete button -->
-                <button
-                  type="button"
-                  class="btn btn-danger"
-                  data-bs-toggle="modal"
-                  data-bs-target="#deleteModal"
-                >
-                  Delete
-                </button>
+                  <!-- delete button -->
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    data-bs-toggle="modal"
+                    data-bs-target="#deleteModal"
+                  >
+                    Delete
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="col-lg-3 col-md-4 col-sm-6 d-flex">
             <div class="card">
               <img
                 src="https://miro.medium.com/max/628/0*QFI7RGZKVplzBAJF.gif"
                 class="card-img-top"
                 alt="A Tiny Bit"
               />
-              <div class="card-body">
+              <div class="card-body d-flex flex-column justify-content-between">
                 <h5 class="card-title">A Tiny Bit</h5>
                 <p class="card-text">
                   Any time you want to emphasize a small point, such as
@@ -176,34 +188,36 @@
                   addition–show it!
                 </p>
                 <!-- update button -->
-                <button
-                  type="button"
-                  class="btn btn-warning"
-                  data-bs-toggle="modal"
-                  data-bs-target="#updateModal"
-                >
-                  Update
-                </button>
-                <!-- delete button -->
-                <button
-                  type="button"
-                  class="btn btn-danger"
-                  data-bs-toggle="modal"
-                  data-bs-target="#deleteModal"
-                >
-                  Delete
-                </button>
+                <div>
+                  <button
+                    type="button"
+                    class="btn btn-warning"
+                    data-bs-toggle="modal"
+                    data-bs-target="#updateModal"
+                  >
+                    Update
+                  </button>
+                  <!-- delete button -->
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    data-bs-toggle="modal"
+                    data-bs-target="#deleteModal"
+                  >
+                    Delete
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="col-lg-3 col-md-4 col-sm-6 d-flex">
             <div class="card">
               <img
                 src="https://miro.medium.com/max/628/0*z_VKpAQyxUaVIcxj.gif"
                 class="card-img-top"
                 alt="Listen Up"
               />
-              <div class="card-body">
+              <div class="card-body d-flex flex-column justify-content-between">
                 <h5 class="card-title">Listen Up!</h5>
                 <p class="card-text">
                   This is a very strong gesture, so use it with caution. It is a
@@ -211,34 +225,36 @@
                   say is important!”
                 </p>
                 <!-- update button -->
-                <button
-                  type="button"
-                  class="btn btn-warning"
-                  data-bs-toggle="modal"
-                  data-bs-target="#updateModal"
-                >
-                  Update
-                </button>
-                <!-- delete button -->
-                <button
-                  type="button"
-                  class="btn btn-danger"
-                  data-bs-toggle="modal"
-                  data-bs-target="#deleteModal"
-                >
-                  Delete
-                </button>
+                <div>
+                  <button
+                    type="button"
+                    class="btn btn-warning"
+                    data-bs-toggle="modal"
+                    data-bs-target="#updateModal"
+                  >
+                    Update
+                  </button>
+                  <!-- delete button -->
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    data-bs-toggle="modal"
+                    data-bs-target="#deleteModal"
+                  >
+                    Delete
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="col-lg-3 col-md-4 col-sm-6 d-flex">
             <div class="card">
               <img
                 src="https://www.scienceofpeople.com/wp-content/uploads/2021/03/Dusty-Hands-FistSpeakersFist-YoungAdult-Male-Front-1-1024x683.jpg"
                 class="card-img-top"
                 alt="Determined"
               />
-              <div class="card-body">
+              <div class="card-body d-flex flex-column justify-content-between">
                 <h5 class="card-title">I'm Determined!</h5>
                 <p class="card-text">
                   A solid fist–shaking it at someone or punching it in the air,
@@ -246,36 +262,36 @@
                   irritated voice, it can be as anger!
                 </p>
                 <!-- update button -->
-                <button
-                  type="button"
-                  class="btn btn-warning"
-                  data-bs-toggle="modal"
-                  data-bs-target="#updateModal"
-                >
-                  Update
-                </button>
-                <!-- delete button -->
-                <button
-                  type="button"
-                  class="btn btn-danger"
-                  data-bs-toggle="modal"
-                  data-bs-target="#deleteModal"
-                >
-                  Delete
-                </button>
+                <div>
+                  <button
+                    type="button"
+                    class="btn btn-warning"
+                    data-bs-toggle="modal"
+                    data-bs-target="#updateModal"
+                  >
+                    Update
+                  </button>
+                  <!-- delete button -->
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    data-bs-toggle="modal"
+                    data-bs-target="#deleteModal"
+                  >
+                    Delete
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="col-lg-3 col-md-4 col-sm-6 d-flex">
             <div class="card">
               <img
                 src="https://miro.medium.com/max/626/1*1KH0e2ikJ-hyr8ZUoWac7w.gif"
                 class="card-img-top"
                 alt="everything"
               />
-              <div class="card-body">
+              <div class="card-body d-flex flex-column justify-content-between">
                 <h5 class="card-title">Everything</h5>
                 <p class="card-text">
                   Want to make a grand gesture? Then, the ‘everything’ gesture
@@ -283,34 +299,36 @@
                   ideas to be inclusive.
                 </p>
                 <!-- update button -->
-                <button
-                  type="button"
-                  class="btn btn-warning"
-                  data-bs-toggle="modal"
-                  data-bs-target="#updateModal"
-                >
-                  Update
-                </button>
-                <!-- delete button -->
-                <button
-                  type="button"
-                  class="btn btn-danger"
-                  data-bs-toggle="modal"
-                  data-bs-target="#deleteModal"
-                >
-                  Delete
-                </button>
+                <div>
+                  <button
+                    type="button"
+                    class="btn btn-warning"
+                    data-bs-toggle="modal"
+                    data-bs-target="#updateModal"
+                  >
+                    Update
+                  </button>
+                  <!-- delete button -->
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    data-bs-toggle="modal"
+                    data-bs-target="#deleteModal"
+                  >
+                    Delete
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="col-lg-3 col-md-4 col-sm-6 d-flex">
             <div class="card">
               <img
                 src="https://miro.medium.com/max/628/0*c-3tAS59hmg071Ow.gif"
                 class="card-img-top"
                 alt="Small, Medium, Large"
               />
-              <div class="card-body">
+              <div class="card-body d-flex flex-column justify-content-between">
                 <h5 class="card-title">Small, Medium, Large</h5>
                 <p class="card-text">
                   You can use this to indicate how big or small something is or
@@ -318,68 +336,72 @@
                   (Large).
                 </p>
                 <!-- update button -->
-                <button
-                  type="button"
-                  class="btn btn-warning"
-                  data-bs-toggle="modal"
-                  data-bs-target="#updateModal"
-                >
-                  Update
-                </button>
-                <!-- delete button -->
-                <button
-                  type="button"
-                  class="btn btn-danger"
-                  data-bs-toggle="modal"
-                  data-bs-target="#deleteModal"
-                >
-                  Delete
-                </button>
+                <div>
+                  <button
+                    type="button"
+                    class="btn btn-warning"
+                    data-bs-toggle="modal"
+                    data-bs-target="#updateModal"
+                  >
+                    Update
+                  </button>
+                  <!-- delete button -->
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    data-bs-toggle="modal"
+                    data-bs-target="#deleteModal"
+                  >
+                    Delete
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="col-lg-3 col-md-4 col-sm-6 d-flex">
             <div class="card">
               <img
                 src="https://miro.medium.com/max/628/0*1Ps9yO0PHQjddf-h.gif"
                 class="card-img-top"
                 alt="Let Me Tell You"
               />
-              <div class="card-body">
+              <div class="card-body d-flex flex-column justify-content-between">
                 <h5 class="card-title">Let Me Tell You</h5>
                 <p class="card-text">
                   Pointing should be used with caution. However, you can point
                   to get someone’s attention or literally to make a point.
                 </p>
                 <!-- update button -->
-                <button
-                  type="button"
-                  class="btn btn-warning"
-                  data-bs-toggle="modal"
-                  data-bs-target="#updateModal"
-                >
-                  Update
-                </button>
-                <!-- delete button -->
-                <button
-                  type="button"
-                  class="btn btn-danger"
-                  data-bs-toggle="modal"
-                  data-bs-target="#deleteModal"
-                >
-                  Delete
-                </button>
+                <div>
+                  <button
+                    type="button"
+                    class="btn btn-warning"
+                    data-bs-toggle="modal"
+                    data-bs-target="#updateModal"
+                  >
+                    Update
+                  </button>
+                  <!-- delete button -->
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    data-bs-toggle="modal"
+                    data-bs-target="#deleteModal"
+                  >
+                    Delete
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="col-lg-3 col-md-4 col-sm-6 d-flex">
             <div class="card">
               <img
                 src="https://miro.medium.com/max/628/0*N8YZ1m3wAgKnkqZf.gif"
                 class="card-img-top"
                 alt="Just a Part"
               />
-              <div class="card-body">
+              <div class="card-body d-flex flex-column justify-content-between">
                 <h5 class="card-title">Just a Part</h5>
                 <p class="card-text">
                   This gesture can be used to demonstrate a very specific part
@@ -387,36 +409,36 @@
                   it is separate.
                 </p>
                 <!-- update button -->
-                <button
-                  type="button"
-                  class="btn btn-warning"
-                  data-bs-toggle="modal"
-                  data-bs-target="#updateModal"
-                >
-                  Update
-                </button>
-                <!-- delete button -->
-                <button
-                  type="button"
-                  class="btn btn-danger"
-                  data-bs-toggle="modal"
-                  data-bs-target="#deleteModal"
-                >
-                  Delete
-                </button>
+                <div>
+                  <button
+                    type="button"
+                    class="btn btn-warning"
+                    data-bs-toggle="modal"
+                    data-bs-target="#updateModal"
+                  >
+                    Update
+                  </button>
+                  <!-- delete button -->
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    data-bs-toggle="modal"
+                    data-bs-target="#deleteModal"
+                  >
+                    Delete
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="col-lg-3 col-md-4 col-sm-6 d-flex">
             <div class="card">
               <img
                 src="https://www.scienceofpeople.com/wp-content/uploads/2021/02/Lauren-ArmsHands-IAmMagnanimousArmsOutGod-YoungAdult-Female-Front-1024x683.jpg"
                 class="card-img-top"
                 alt="I am magnanimous"
               />
-              <div class="card-body">
+              <div class="card-body d-flex flex-column justify-content-between">
                 <h5 class="card-title">I am magnanimous</h5>
                 <p class="card-text">
                   When you have both of your hands apart and palms facing toward
@@ -424,34 +446,36 @@
                   grand gesture.
                 </p>
                 <!-- update button -->
-                <button
-                  type="button"
-                  class="btn btn-warning"
-                  data-bs-toggle="modal"
-                  data-bs-target="#updateModal"
-                >
-                  Update
-                </button>
-                <!-- delete button -->
-                <button
-                  type="button"
-                  class="btn btn-danger"
-                  data-bs-toggle="modal"
-                  data-bs-target="#deleteModal"
-                >
-                  Delete
-                </button>
+                <div>
+                  <button
+                    type="button"
+                    class="btn btn-warning"
+                    data-bs-toggle="modal"
+                    data-bs-target="#updateModal"
+                  >
+                    Update
+                  </button>
+                  <!-- delete button -->
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    data-bs-toggle="modal"
+                    data-bs-target="#deleteModal"
+                  >
+                    Delete
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="col-lg-3 col-md-4 col-sm-6 d-flex">
             <div class="card">
               <img
                 src="https://www.scienceofpeople.com/wp-content/uploads/2021/03/Lauren-Hands-HandUpMeasuringGrowthRaisedRaising-YoungAdult-Female-Side-1024x683.jpg"
                 class="card-img-top"
                 alt="Growth"
               />
-              <div class="card-body">
+              <div class="card-body d-flex flex-column justify-content-between">
                 <h5 class="card-title">Growth</h5>
                 <p class="card-text">
                   Indicating some kind of growth or increase. It can be used to
@@ -459,34 +483,36 @@
                   headed.
                 </p>
                 <!-- update button -->
-                <button
-                  type="button"
-                  class="btn btn-warning"
-                  data-bs-toggle="modal"
-                  data-bs-target="#updateModal"
-                >
-                  Update
-                </button>
-                <!-- delete button -->
-                <button
-                  type="button"
-                  class="btn btn-danger"
-                  data-bs-toggle="modal"
-                  data-bs-target="#deleteModal"
-                >
-                  Delete
-                </button>
+                <div>
+                  <button
+                    type="button"
+                    class="btn btn-warning"
+                    data-bs-toggle="modal"
+                    data-bs-target="#updateModal"
+                  >
+                    Update
+                  </button>
+                  <!-- delete button -->
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    data-bs-toggle="modal"
+                    data-bs-target="#deleteModal"
+                  >
+                    Delete
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="col-lg-3 col-md-4 col-sm-6 d-flex">
             <div class="card">
               <img
                 src="https://www.scienceofpeople.com/wp-content/uploads/2021/03/Dusty-Hands-PalmHandUp-YoungAdult-Male-Front-1-1024x683.jpg"
                 class="card-img-top"
                 alt="You"
               />
-              <div class="card-body">
+              <div class="card-body d-flex flex-column justify-content-between">
                 <h5 class="card-title">You</h5>
                 <p class="card-text">
                   Instead of pointing, open hand or palm, to be more formal.
@@ -494,70 +520,72 @@
                   attention.
                 </p>
                 <!-- update button -->
-                <button
-                  type="button"
-                  class="btn btn-warning"
-                  data-bs-toggle="modal"
-                  data-bs-target="#updateModal"
-                >
-                  Update
-                </button>
-                <!-- delete button -->
-                <button
-                  type="button"
-                  class="btn btn-danger"
-                  data-bs-toggle="modal"
-                  data-bs-target="#deleteModal"
-                >
-                  Delete
-                </button>
+                <div>
+                  <button
+                    type="button"
+                    class="btn btn-warning"
+                    data-bs-toggle="modal"
+                    data-bs-target="#updateModal"
+                  >
+                    Update
+                  </button>
+                  <!-- delete button -->
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    data-bs-toggle="modal"
+                    data-bs-target="#deleteModal"
+                  >
+                    Delete
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="col-lg-3 col-md-4 col-sm-6 d-flex">
             <div class="card">
               <img
                 src="https://www.scienceofpeople.com/wp-content/uploads/2021/03/Dusty-Hands-HandOutStop-YoungAdult-Male-Front-1024x683.jpg"
                 class="card-img-top"
                 alt="Stop"
               />
-              <div class="card-body">
+              <div class="card-body d-flex flex-column justify-content-between">
                 <h5 class="card-title">Stop</h5>
                 <p class="card-text">
                   When you flash your palm at someone, you want them to pause or
                   stop. You can do this to stop anyone from doing anything.
                 </p>
                 <!-- update button -->
-                <button
-                  type="button"
-                  class="btn btn-warning"
-                  data-bs-toggle="modal"
-                  data-bs-target="#updateModal"
-                >
-                  Update
-                </button>
-                <!-- delete button -->
-                <button
-                  type="button"
-                  class="btn btn-danger"
-                  data-bs-toggle="modal"
-                  data-bs-target="#deleteModal"
-                >
-                  Delete
-                </button>
+                <div>
+                  <button
+                    type="button"
+                    class="btn btn-warning"
+                    data-bs-toggle="modal"
+                    data-bs-target="#updateModal"
+                  >
+                    Update
+                  </button>
+                  <!-- delete button -->
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    data-bs-toggle="modal"
+                    data-bs-target="#deleteModal"
+                  >
+                    Delete
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="col-lg-3 col-md-4 col-sm-6 d-flex">
             <div class="card">
               <img
                 src="https://www.scienceofpeople.com/wp-content/uploads/2021/03/Lauren-Hands-BegBeggingHands-YoungAdult-Female-Front-1-1-1024x683.jpg"
                 class="card-img-top"
                 alt="not hiding"
               />
-              <div class="card-body">
+              <div class="card-body d-flex flex-column justify-content-between">
                 <h5 class="card-title">I'm not hiding anything</h5>
                 <p class="card-text">
                   When your hands are at a 45-degree angle with the palms facing
@@ -565,34 +593,36 @@
                   saying that you are laying it all out on the table.
                 </p>
                 <!-- update button -->
-                <button
-                  type="button"
-                  class="btn btn-warning"
-                  data-bs-toggle="modal"
-                  data-bs-target="#updateModal"
-                >
-                  Update
-                </button>
-                <!-- delete button -->
-                <button
-                  type="button"
-                  class="btn btn-danger"
-                  data-bs-toggle="modal"
-                  data-bs-target="#deleteModal"
-                >
-                  Delete
-                </button>
+                <div>
+                  <button
+                    type="button"
+                    class="btn btn-warning"
+                    data-bs-toggle="modal"
+                    data-bs-target="#updateModal"
+                  >
+                    Update
+                  </button>
+                  <!-- delete button -->
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    data-bs-toggle="modal"
+                    data-bs-target="#deleteModal"
+                  >
+                    Delete
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="col-lg-3 col-md-4 col-sm-6 d-flex">
             <div class="card">
               <img
                 src="https://www.scienceofpeople.com/wp-content/uploads/2021/03/Lauren-Arm-BigHandArmGesture-YoungAdult-Female-Side-1024x683.jpg"
                 class="card-img-top"
                 alt="We"
               />
-              <div class="card-body">
+              <div class="card-body d-flex flex-column justify-content-between">
                 <h5 class="card-title">We</h5>
                 <p class="card-text">
                   This gesture can be used whenever you are speaking in a group
@@ -600,34 +630,36 @@
                   wrapping the audience in a hug, making the “we” gesture.
                 </p>
                 <!-- update button -->
-                <button
-                  type="button"
-                  class="btn btn-warning"
-                  data-bs-toggle="modal"
-                  data-bs-target="#updateModal"
-                >
-                  Update
-                </button>
-                <!-- delete button -->
-                <button
-                  type="button"
-                  class="btn btn-danger"
-                  data-bs-toggle="modal"
-                  data-bs-target="#deleteModal"
-                >
-                  Delete
-                </button>
+                <div>
+                  <button
+                    type="button"
+                    class="btn btn-warning"
+                    data-bs-toggle="modal"
+                    data-bs-target="#updateModal"
+                  >
+                    Update
+                  </button>
+                  <!-- delete button -->
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    data-bs-toggle="modal"
+                    data-bs-target="#deleteModal"
+                  >
+                    Delete
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="col-lg-3 col-md-4 col-sm-6 d-flex">
             <div class="card">
               <img
                 src="https://www.scienceofpeople.com/wp-content/uploads/2021/03/Copy-of-Dusty-Hands-SteepleSteepling-YoungAdult-Male-Front-1024x683.jpg"
                 class="card-img-top"
                 alt="Mr. Wonderful"
               />
-              <div class="card-body">
+              <div class="card-body d-flex flex-column justify-content-between">
                 <h5 class="card-title">Kevin O'Leary's aka Mr. Wonderful</h5>
                 <p class="card-text">
                   You lightly tap the tips of your fingers together. It is seen
@@ -635,34 +667,36 @@
                   is trying it out.
                 </p>
                 <!-- update button -->
-                <button
-                  type="button"
-                  class="btn btn-warning"
-                  data-bs-toggle="modal"
-                  data-bs-target="#updateModal"
-                >
-                  Update
-                </button>
-                <!-- delete button -->
-                <button
-                  type="button"
-                  class="btn btn-danger"
-                  data-bs-toggle="modal"
-                  data-bs-target="#deleteModal"
-                >
-                  Delete
-                </button>
+                <div>
+                  <button
+                    type="button"
+                    class="btn btn-warning"
+                    data-bs-toggle="modal"
+                    data-bs-target="#updateModal"
+                  >
+                    Update
+                  </button>
+                  <!-- delete button -->
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    data-bs-toggle="modal"
+                    data-bs-target="#deleteModal"
+                  >
+                    Delete
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="col-lg-3 col-md-4 col-sm-6 d-flex">
             <div class="card">
               <img
                 src="https://www.scienceofpeople.com/wp-content/uploads/2021/03/Lauren-Hands-ThumbsUp-YoungAdult-Female-Front-1-1024x683.jpg"
                 class="card-img-top"
                 alt="Thumbs up"
               />
-              <div class="card-body">
+              <div class="card-body d-flex flex-column justify-content-between">
                 <h5 class="card-title">Thumbs up</h5>
                 <p class="card-text">
                   If you’re from the Western world, thumbs up obviously means
@@ -670,23 +704,25 @@
                   powerful leaders will use their thumbs when gesturing.
                 </p>
                 <!-- update button -->
-                <button
-                  type="button"
-                  class="btn btn-warning"
-                  data-bs-toggle="modal"
-                  data-bs-target="#updateModal"
-                >
-                  Update
-                </button>
-                <!-- delete button -->
-                <button
-                  type="button"
-                  class="btn btn-danger"
-                  data-bs-toggle="modal"
-                  data-bs-target="#deleteModal"
-                >
-                  Delete
-                </button>
+                <div>
+                  <button
+                    type="button"
+                    class="btn btn-warning"
+                    data-bs-toggle="modal"
+                    data-bs-target="#updateModal"
+                  >
+                    Update
+                  </button>
+                  <!-- delete button -->
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    data-bs-toggle="modal"
+                    data-bs-target="#deleteModal"
+                  >
+                    Delete
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -783,8 +819,9 @@
             </div>
           </div>
         </div>
-      </main>
-    </div>
+      </div>
+    </main>
+
     <!-- Bootstrap JavaScript Libraries -->
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"

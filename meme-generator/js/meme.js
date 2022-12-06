@@ -20,7 +20,8 @@ const CARD_TITLE_ATTRIBUTE = "data-attribute";
     const bottomText = addForm.elements.bottomText.value;
 
     //storing the elements in an object
-    const dataCard = {imageUrl, topText, bottomText};
+    const dataCard = {imageUrl, topText, bottomText, id:Date.now()};
+
     createCard(dataCard);
 
     //local save
@@ -57,13 +58,15 @@ const CARD_TITLE_ATTRIBUTE = "data-attribute";
     cardCol.querySelector(".card-text").textContent = dataCard.bottomText;
 
     //delete method
-    //cardCol. will use the button within the innerHTML
+    //cardCol. will use the button within the innerHTML 
+    
+
     const deleteBtn = cardCol.querySelector(".btn-danger");
     deleteBtn.addEventListener("click", deleteCard);
     
     //class has to start with "data-"
     //will use this attribute to know which card to delete from the DB 
-    cardCol.setAttribute(CARD_TITLE_ATTRIBUTE, dataCard.topText);
+    cardCol.setAttribute(CARD_TITLE_ATTRIBUTE, dataCard.id);
 
     //add cardCol to the page
     const cardContainer = document.querySelector("#cardContainer");
@@ -104,11 +107,11 @@ function deleteCard(event){
     const cardCol = deleteBtn.closest(".col");
 
     //gets the attribute that was set on the top to find out the unique card
-    const topTextToDelete = cardCol.getAttribute(CARD_TITLE_ATTRIBUTE);
+    const  idToDelete = Number(cardCol.getAttribute(CARD_TITLE_ATTRIBUTE));
     let data = loadDataFromDB();
 
     //keep the ones that don't have this specific topText, filter creates a new array
-    data = data.filter((dataCard) => dataCard.topText !== topTextToDelete);
+    data = data.filter((dataCard) => dataCard.id !== idToDelete);
     saveDataToDB(data);
     cardCol.remove();
 

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event-Bubbling</title>
+  </head>
+  <body>
+    <!-- when nested elements event happens on the child elements, 
+        and parent also have the element, it will fire on both -->
+    <div>
+      <div onclick="alert(`Damn, even I was alerted`)">
+        All the way out
+        <div onclick="alert(`Even I was alerted`); event.stopPropagation()">
+          outer
+          <div class="inner">Inner</div>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.querySelector(".inner").addEventListener("click", (e) => {
+        alert("im the inner child");
+        e.stopPropagation();
+      });
+    </script>
+  </body>
+</html>

@@ -1,3 +1,5 @@
+"use strict";
+
 //local Storage
 const KEY = "card-data";
 const CARD_TITLE_ATTRIBUTE = "data-attribute";
@@ -61,7 +63,6 @@ function createCard(cardInfo){
                   <!-- delete button -->
                   <button
                     type="button"
-                    id = "deleteButton"
                     class="btn btn-danger"
                     data-bs-toggle="modal"
                     data-bs-target="#deleteModal"
@@ -87,6 +88,7 @@ function createCard(cardInfo){
 
     //class has to start with "data-". will use this attribute to know which card to delete from DB
     cardCol.setAttribute(CARD_TITLE_ATTRIBUTE, cardInfo.id);
+    // document.querySelector(".btn danger").setAttribute(BUTTON_ID_ATTRIBUTE,);
 }
 
 
@@ -159,44 +161,50 @@ function loadLocalDb(){
   }
 
 // delete method
-// const deleteBtn = document.querySelector("#deleteModal .btn-danger");
-// console.log(deleteBtn);
-// deleteBtn.addEventListener("click", deleteCard);
+const deleteBtn = document.querySelector("#deleteModal .btn-danger");
+console.log(deleteBtn);
+deleteBtn.addEventListener("click", deleteCard);
 
 
 // selects the delete button from the modal 
 const modalDeleteBtn = document.querySelector("#deleteModal");
 
 //show.bs.modal fires when the modal is about to be displayed - on this case the delete button modal
-modalDeleteBtn.addEventListener("show.bs.modal", addModalListeners);
+modalDeleteBtn.addEventListener("show.bs.modal", setModalAttribute);
 
 //this will select the modal delete button and call the function delete card 
-function addModalListeners(event){
- const addModalListeners =document.querySelector("#deleteModal .btn-danger");
- addModalListeners.addEventListener("click",deleteCard);
+function setModalAttribute(event){
+  
+let cardTriggerModal = event.relatedTarget.closest(".col-lg-3").getAttribute(CARD_TITLE_ATTRIBUTE);
 
+//any time when you click a modal the data attributes will change, will reach into the specific card by the id. 
+modalDeleteBtn.dataset.cardSelective = cardTriggerModal;
+console.log(cardTriggerModal);
+console.log(event.relatedTarget);
 }
 
 //delete card from page
 //parent - selects the #deleteButton which is the button on the first display on page,
 // and will get the closest ".col-lg-3" which will remove it after filtering from the localStorage
 function deleteCard(event){
-  //child
-    const parent = document.querySelector("#deleteButton");
-    console.log(parent);
-    //parent
-    const child = parent.closest(".col-lg-3");
-    console.log(child);
+  //grabs the modal delete
+  const idToDelete= event.target.closest('#deleteModal').dataset.cardSelective;
 
+  console.log(idToDelete);
+
+  const itemToDelete = document.querySelector("#cardContainer").querySelector(`[data-attribute="${idToDelete}"]`);
+
+  console.log(idToDelete);
+  console.log(itemToDelete)
     //gets the attribute that was set on the top to find out the unique card
     //converting it to a Number since the attribute is an Id of Date.now();
-    const idToDelete = Number(child.getAttribute(CARD_TITLE_ATTRIBUTE));
+    // const idToDelete = Number(child.getAttribute(CARD_TITLE_ATTRIBUTE));
     let data = loadLocalDb();
 
     //keep the ones that don't have this specific Id, filter creates a new array
     data = data.filter((cardInfo) => cardInfo.id !== idToDelete);
     saveCardLocalStorage(data);
-    child.remove();
+    itemToDelete.remove();
 }
 
 //save it back to the local storage

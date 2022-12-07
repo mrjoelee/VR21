@@ -15,7 +15,6 @@ function handleAddSubmit(event){
 
     //input elements, has values as well on the information that user entered. 
     const title = addForm.elements.title.value;
-    console.log(title);
     const description = addForm.elements.description.value;
     const imageUrl = addForm.elements.imageUrl.value;
 
@@ -51,6 +50,7 @@ function createCard(cardInfo){
                   <!-- update button -->
                   <button
                     type="button"
+                    id="updateButton"
                     class="btn btn-warning"
                     data-bs-toggle="modal"
                     data-bs-target="#updateModal"
@@ -85,14 +85,8 @@ function createCard(cardInfo){
     cardContainer.append(cardCol);
 
 
-
     //class has to start with "data-". will use this attribute to know which card to delete from DB
     cardCol.setAttribute(CARD_TITLE_ATTRIBUTE, cardInfo.id);
-
-    //update method
-    const updateBtn = cardCol.querySelector(".btn-warning");
-    updateBtn.addEventListener("click",updateCard);
-
 }
 
 
@@ -123,6 +117,46 @@ function loadLocalDb(){
     }
     return data;
 }
+  //update method
+  const updateBtn = document.querySelector("#updateModal");
+
+  updateBtn.addEventListener("show.bs.modal",updateModalListeners);
+  
+  function updateModalListeners(event){
+  const updateModalListeners = document.querySelector("#updateModal form");
+  updateModalListeners.addEventListener("click", updateCard);
+  console.log(updateModalListeners);
+  }
+  
+  
+  function updateCard(cardInfo){
+    const parent = document.querySelector("#updateButton");
+    console.log(parent);
+    const child = parent.closest(".col-lg-3");
+    console.log(child);
+
+    //gets the attribute that was set on the top to find out the unique card
+    //converting it to a Number since the attribute is an Id of Date.now();
+    const idToUpdate = Number(child.getAttribute(CARD_TITLE_ATTRIBUTE));
+    let data = loadLocalDb();
+
+    //keep the ones that don't have this specific Id, filter creates a new array
+    data = data.filter((cardInfo) => cardInfo.id == idToUpdate);
+    saveCardLocalStorage(data);
+
+    const updatedTitle =document.querySelector(".card-title").textContent = cardInfo.title;
+    const updatedDescription = document.querySelector(".card-text").textContent = cardInfo.description;
+    const updateImageUrl = document.querySelector(".card-img-top").setAttribute("src",cardInfo.imageUrl);
+
+    console.log(updatedTitle);
+
+    const cardContainer = document.querySelector("#cardContainer");
+    
+    cardContainer.append(updatedTitle, updatedDescription, updateImageUrl);
+  
+      //update card 
+      // change the innerHTML of each element by querying it by the unique id.  
+  }
 
 // delete method
 // const deleteBtn = document.querySelector("#deleteModal .btn-danger");
@@ -130,18 +164,27 @@ function loadLocalDb(){
 // deleteBtn.addEventListener("click", deleteCard);
 
 
+// selects the delete button from the modal 
+const modalDeleteBtn = document.querySelector("#deleteModal");
 
-document.querySelector("#deleteModal").addEventListener("show.bs.modal", addModalListeners);
+//show.bs.modal fires when the modal is about to be displayed - on this case the delete button modal
+modalDeleteBtn.addEventListener("show.bs.modal", addModalListeners);
 
+//this will select the modal delete button and call the function delete card 
 function addModalListeners(event){
-document.querySelector("#deleteModal .btn-danger").addEventListener("click",deleteCard);
+ const addModalListeners =document.querySelector("#deleteModal .btn-danger");
+ addModalListeners.addEventListener("click",deleteCard);
 
 }
 
 //delete card from page
+//parent - selects the #deleteButton which is the button on the first display on page,
+// and will get the closest ".col-lg-3" which will remove it after filtering from the localStorage
 function deleteCard(event){
+  //child
     const parent = document.querySelector("#deleteButton");
     console.log(parent);
+    //parent
     const child = parent.closest(".col-lg-3");
     console.log(child);
 
@@ -162,8 +205,3 @@ function saveCardLocalStorage(data){
     localStorage.setItem(KEY, JSON.stringify(data));
 }
 
-function updateCard(event){
-  
-    //update card 
-    // change the innerHTML of each element by querying it by the unique id.  
-}

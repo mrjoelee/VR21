@@ -27,6 +27,13 @@ const deleteModal = document.querySelector("#deleteModal");
 //internal thing for bootstrap ("show.bs.modal") - anytime when the modal pops up, we add an eventlistener which is "setModalAttribute"
 deleteModal.addEventListener("show.bs.modal", setModalAttribute);
 
+// //update method
+// const updateBtn = document.querySelector("#createModal");
+// updateBtn.addEventListener("click", updateCard)
+
+// const updateModal = document.querySelector("#createModal");
+// updateModal.addEventListener("show.bs.modal",setModalAttribute);
+
 function handleAddSubmit(event){
     //stopping from refreshing the page when click "Submit" on the modal form 
     event.preventDefault();
@@ -69,7 +76,7 @@ function createCard(cardInfo){
                     id="updateButton"
                     class="btn btn-warning"
                     data-bs-toggle="modal"
-                    data-bs-target="#updateModal"
+                    data-bs-target="#createModal"
                   >
                     Update
                   </button>
@@ -133,49 +140,39 @@ function loadLocalDb(){
     }
     return data;
 }
-  //update method
-  // const updateBtn = document.querySelector("#updateModal");
 
-  // updateBtn.addEventListener("show.bs.modal",updateModalListeners);
-  
-  // function updateModalListeners(event){
-  // const updateModalListeners = document.querySelector("#updateModal form");
-  // updateModalListeners.addEventListener("click", updateCard);
-  // console.log(updateModalListeners);
-  // }
-  
-  function updateCard(cardInfo){
-    const parent = document.querySelector("#updateButton");
-    console.log(parent);
-    const child = parent.closest(".col-lg-3");
-    console.log(child);
 
-  
 
-    //gets the attribute that was set on the top to find out the unique card
-    //converting it to a Number since the attribute is an Id of Date.now();
-    const idToUpdate = Number(child.getAttribute(CARD_TITLE_ATTRIBUTE));
-    let data = loadLocalDb();
+// function updateCard(event){
+//   const idToUpdate = Number(event.target.closest("#createModal").dataset.cardSelective);
+//   console.log(idToUpdate);
 
-    //keep the ones that don't have this specific Id, filter creates a new array
-    //map method the cardInfo to get the card that needs to get updated -- e.g - for example you can use the id (data-attribute.)
-    data = data.filter((cardInfo) => cardInfo.id == idToUpdate);
+//   const itemToUpdate = document.querySelector("#cardContainer");
+//   itemToUpdate.querySelector(`[data-card-identification="${idToUpdate}"]`)
+//   let data = loadLocalDb();
 
-    const updatedTitle =document.querySelector(".card-title").textContent = cardInfo.title;
-    const updatedDescription = document.querySelector(".card-text").textContent = cardInfo.description;
-    const updateImageUrl = document.querySelector(".card-img-top").setAttribute("src",cardInfo.imageUrl);
+//   //map the data to find out the correct data-card-identification so we can edit it.
+//   data = data.map((cardInfo) => {
+//     if(cardInfo.id === idToUpdate){
+//   cardInfo.title =document.querySelector(".card-title").textContent = cardInfo.title;
+//   cardInfo.description = document.querySelector(".card-text").textContent = cardInfo.description;
+//   cardInfo.imageUrl = document.querySelector(".card-img-top").setAttribute("src",cardInfo.imageUrl);
+//     }
+//     return data;
+//   });
 
-    saveCardLocalStorage(data);
+//   //gets the attribute that was set on the top to find out the unique card
+//   //converting it to a Number since the attribute is an Id of Date.now();
+//   // const idToUpdate1 = Number(child.getAttribute(CARD_TITLE_ATTRIBUTE));
 
-    console.log(updatedTitle);
-
-    // const cardContainer = document.querySelector("#cardContainer");
+//   saveCardLocalStorage(data);
+//     // const cardContainer = document.querySelector("#cardContainer");
     
-    //cardContainer.append(updatedTitle, updatedDescription, updateImageUrl);
+//     //cardContainer.append(updatedTitle, updatedDescription, updateImageUrl);
   
-      //update card 
-      // change the innerHTML of each element by querying it by the unique id.  
-  }
+//       //update card 
+//       // change the innerHTML of each element by querying it by the unique id.  
+//   }
 
 
 //this will select the modal delete button and call the function delete card (which card open the deleteModal)
@@ -185,10 +182,13 @@ function setModalAttribute(event){
  // it will look on the delete button and look at the parent with the matching class or identifier (relatedTarget.closest())
 let cardTriggerModal = event.relatedTarget.closest(".col-lg-3").getAttribute(CARD_TITLE_ATTRIBUTE);
 
+//please note that since it's using the same modal for create button, it's trigging the setModal as an update when clicking on the Add.
+
 //any time when you click a modal the data attributes will change, will reach into the specific card by the id. 
 //setting the modalAttribute to match the card data-card-identification (Card-title-Attribute);
 //dataset retrieve the data-attribute
 deleteModal.dataset.cardSelective = cardTriggerModal;
+// updateModal.dataset.cardSelective = cardTriggerModal;
 // console.log(cardTriggerModal);
 // console.log(event.relatedTarget);
 }

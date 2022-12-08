@@ -1,4 +1,4 @@
-
+"use strict";
 //getting the form for the addMemeModal
  const addForm = document.querySelector("#addMemeModal form"); 
 

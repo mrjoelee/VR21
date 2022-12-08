@@ -1,3 +1,4 @@
+"use strict";
 const gameContainer = document.getElementById("game");
 let cardMatched = 0;
 const COLORS = [
@@ -99,7 +100,6 @@ function handleCardClick(event) {
       });
       
     }
-    
   }
 
   if(cardMatched === COLORS.length) {

@@ -30,27 +30,38 @@ deleteModal.addEventListener("show.bs.modal", setModalAttribute);
 // //update method
 // const updateBtn = document.querySelector("#createModal");
 // updateBtn.addEventListener("click", updateCard)
-
-// const updateModal = document.querySelector("#createModal");
-// updateModal.addEventListener("show.bs.modal",setModalAttribute);
+const updateModal = document.querySelector("#createModal");
+updateModal.addEventListener("show.bs.modal",setModalAttribute);
 
 function handleAddSubmit(event){
     //stopping from refreshing the page when click "Submit" on the modal form 
     event.preventDefault();
-
+    
     //input elements, has values as well on the information that user entered. 
+    // using the name attribute from the html form and value is whatever the user is typing
     const title = addForm.elements.title.value;
     const description = addForm.elements.description.value;
     const imageUrl = addForm.elements.imageUrl.value;
 
-    //storing the elements in an object
+    const cardInfo = {title, description, imageUrl};
+
+    
+    const idToUpdate = Number(event.target.closest("#createModal").dataset.cardSelective);
+
+  //if click on updatebutton, do not create a card, update the card
+    if(!idToUpdate){
+      //storing the elements in an object
     //using Date.Now() to create a unique id. 
-    const cardInfo = {id:Date.now(), title, description, imageUrl};
+    cardInfo.id = Date.now();
     createCard(cardInfo);
 
     //localStorage save
     addCardLocalStorage(cardInfo); 
-
+    } else {
+      cardInfo.id = idToUpdate;
+      updateCard(cardInfo);
+    }
+   
     //resets the entry values for the form on the modal
     addForm.reset();
 
@@ -66,14 +77,13 @@ function createCard(cardInfo){
     cardCol.innerHTML = `
     <div class="card">
             <img class="card-img-top" />
-             <div class="card-body d-flex flex-column justify-content-between">
+             <div class="card-body d-flex flex-column justify-content-between align-item-between">
                 <h5 class="card-title"></h5>
                 <p class="card-text"></p>
                 <div>
                   <!-- update button -->
                   <button
                     type="button"
-                    id="updateButton"
                     class="btn btn-warning"
                     data-bs-toggle="modal"
                     data-bs-target="#createModal"
@@ -142,55 +152,76 @@ function loadLocalDb(){
 }
 
 
+//cannot use an event parameter, without having an addEventListener. 
+function updateCard(newInfo){
 
-// function updateCard(event){
-//   const idToUpdate = Number(event.target.closest("#createModal").dataset.cardSelective);
-//   console.log(idToUpdate);
+ 
+let data = loadLocalDb();
 
-//   const itemToUpdate = document.querySelector("#cardContainer");
-//   itemToUpdate.querySelector(`[data-card-identification="${idToUpdate}"]`)
-//   let data = loadLocalDb();
+//find the data to find out the correct data-card-identification so we can edit it.
+//find function should be returning a boolean 
+//old information on found card
+const foundCard = data.find((card) => card.id === newInfo.id);
 
-//   //map the data to find out the correct data-card-identification so we can edit it.
-//   data = data.map((cardInfo) => {
-//     if(cardInfo.id === idToUpdate){
-//   cardInfo.title =document.querySelector(".card-title").textContent = cardInfo.title;
-//   cardInfo.description = document.querySelector(".card-text").textContent = cardInfo.description;
-//   cardInfo.imageUrl = document.querySelector(".card-img-top").setAttribute("src",cardInfo.imageUrl);
-//     }
-//     return data;
-//   });
+const itemToUpdate = document.querySelector( `#cardContainer [data-card-identification="${newInfo.id}"]`)
 
-//   //gets the attribute that was set on the top to find out the unique card
-//   //converting it to a Number since the attribute is an Id of Date.now();
-//   // const idToUpdate1 = Number(child.getAttribute(CARD_TITLE_ATTRIBUTE));
+//updating the UI 
+itemToUpdate.querySelector(".card-title").textContent = newInfo.title;
+itemToUpdate.querySelector(".card-text").textContent = newInfo.description;
+itemToUpdate.querySelector(".card-img-top").setAttribute("src", newInfo.imageUrl);
+itemToUpdate.querySelector(".card-img-top").setAttribute("alt", newInfo.imageUrl);
 
-//   saveCardLocalStorage(data);
-//     // const cardContainer = document.querySelector("#cardContainer");
+//updating the database
+foundCard.title = newInfo.title;
+foundCard.description = newInfo.title;
+foundCard.imageUrl = newInfo.imageUrl;
+
+  //gets the attribute that was set on the top to find out the unique card
+  //converting it to a Number since the attribute is an Id of Date.now();
+  // const idToUpdate1 = Number(child.getAttribute(CARD_TITLE_ATTRIBUTE));
+
+  saveCardLocalStorage(data);
+    // const cardContainer = document.querySelector("#cardContainer");
     
-//     //cardContainer.append(updatedTitle, updatedDescription, updateImageUrl);
+    //cardContainer.append(updatedTitle, updatedDescription, updateImageUrl);
   
-//       //update card 
-//       // change the innerHTML of each element by querying it by the unique id.  
-//   }
+      //update card 
+      // change the innerHTML of each element by querying it by the unique id.  
+  }
 
 
 //this will select the modal delete button and call the function delete card (which card open the deleteModal)
 function setModalAttribute(event){
- 
- //related target the item that called the deleteModal from the new card which is the delete button. 
+
+const addBtn = document.getElementById("add-btn")
+
+//since the add button also calls the createModal, we need a validation when clicking the add doesn't trigger the setAttribute.
+// however the add button is not inside a column. 
+if(event.relatedTarget === addBtn){
+  event.target.dataset.cardSelective ="";
+} else {
+   //related target the item that called the deleteModal from the new card which is the delete button. 
  // it will look on the delete button and look at the parent with the matching class or identifier (relatedTarget.closest())
 let cardTriggerModal = event.relatedTarget.closest(".col-lg-3").getAttribute(CARD_TITLE_ATTRIBUTE);
-
 //please note that since it's using the same modal for create button, it's trigging the setModal as an update when clicking on the Add.
 
 //any time when you click a modal the data attributes will change, will reach into the specific card by the id. 
 //setting the modalAttribute to match the card data-card-identification (Card-title-Attribute);
 //dataset retrieve the data-attribute
-deleteModal.dataset.cardSelective = cardTriggerModal;
+//will add which ever button click for the modal
+event.target.dataset.cardSelective = cardTriggerModal;
+}
+// console.log(event);
+//  console.log(event.target);
+//  console.log(event.relatedTarget);
+
+
+
+// deleteModal.dataset.cardSelective = cardTriggerModal;
 // updateModal.dataset.cardSelective = cardTriggerModal;
 // console.log(cardTriggerModal);
-// console.log(event.relatedTarget);
+
+
 }
 
 //delete card from page
@@ -204,10 +235,10 @@ function deleteCard(event){
   // console.log(idToDelete);
 
   //going to the cardContainer and find the card that matches the data-card-identifications with the current modal data-card-identification. 
-  const itemToDelete = document.querySelector("#cardContainer");
-  itemToDelete.querySelector(`[data-card-identification="${idToDelete}"]`);
+  //starting to the id cardContainer, and find the element that find that attribute. 
+  let itemToDelete = document.querySelector(`#cardContainer [data-card-identification="${idToDelete}"]`);
 
-  console.log(idToDelete);
+  // console.log(idToDelete);
   console.log(itemToDelete)
     //gets the attribute that was set on the top to find out the unique card
     //converting it to a Number since the attribute is an Id of Date.now();

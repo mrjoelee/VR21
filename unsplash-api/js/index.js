@@ -30,7 +30,7 @@ function handleAddSubmit(event){
   for (let i = 0; i < data.results.length - 1; i++) {
     const cardCol = document.createElement('div')
     cardCol.classList.add("col-lg-3", "col-md-4", "col-sm-6", "d-flex");
-    cardCol.innerHTML = `<div "class=card d-flex flex-column justify-content-between align-item-between">
+    cardCol.innerHTML = `<div "class = card">
     <img class="card-img" />
     </div>`;
   

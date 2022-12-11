@@ -1,0 +1,27 @@
+     /* .col-md-3 {
+        border: solid 1px black;
+      } */
+      * {
+        box-sizing: border-box;
+      }
+
+      .card {
+        height: 100%;
+        /* position: relative; */
+      }
+      /* .button {
+        position: absolute;
+        bottom: 2em;
+      } */
+      .row {
+        margin-bottom: 10px;
+      }
+
+      /* hover effect on siblings */
+      .col-lg-3 {
+        transition: .3s;
+      }
+
+      #cardContainer:hover > :not(:hover){
+        opacity: .4;
+      }

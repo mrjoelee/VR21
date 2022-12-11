@@ -1,11 +1,10 @@
 "use strict";
-
 //local Storage
 const KEY = "card-data";
 const CARD_TITLE_ATTRIBUTE = "data-card-identification";
 
 /*
- * Add Event Listeners
+ * AddEventListeners
  */
 
 //getting the form for the addCardModal
@@ -24,12 +23,12 @@ deleteBtn.addEventListener("click", deleteCard);
 const deleteModal = document.querySelector("#deleteModal");
 
 //show.bs.modal fires when the modal is about to be displayed - on this case the delete button modal
-//internal thing for bootstrap ("show.bs.modal") - anytime when the modal pops up, we add an eventlistener which is "setModalAttribute"
+//anytime when the modal pops up, we add an eventlistener which is "setModalAttribute"
 deleteModal.addEventListener("show.bs.modal", setModalAttribute);
 
-// //update method
-const updateBtn = document.querySelector("#createModal");
-updateBtn.addEventListener("click", prePopulateData)
+//update method
+// const updateBtn = document.querySelector("#createModal form");
+// updateBtn.addEventListener(`click`, prePopulateData)
 
 const updateModal = document.querySelector("#createModal");
 updateModal.addEventListener("show.bs.modal",setModalAttribute);
@@ -37,7 +36,7 @@ updateModal.addEventListener("show.bs.modal",setModalAttribute);
 function handleAddSubmit(event){
     //stopping from refreshing the page when click "Submit" on the modal form 
     event.preventDefault();
-    
+
     //input elements, has values as well on the information that user entered. 
     // using the name attribute from the html form and value is whatever the user is typing
     const title = addForm.elements.title.value;
@@ -45,11 +44,10 @@ function handleAddSubmit(event){
     const imageUrl = addForm.elements.imageUrl.value;
 
     const cardInfo = {title, description, imageUrl};
-
     
     const idToUpdate = Number(event.target.closest("#createModal").dataset.cardSelective);
 
-  //if click on updatebutton, do not create a card, update the card
+    //if click on updateButton, do not create a card, update the card
     if(!idToUpdate){
       //storing the elements in an object
     //using Date.Now() to create a unique id. 
@@ -60,6 +58,7 @@ function handleAddSubmit(event){
     addCardLocalStorage(cardInfo); 
     } else {
       cardInfo.id = idToUpdate;
+      
       updateCard(cardInfo);
     }
    
@@ -71,42 +70,30 @@ function handleAddSubmit(event){
     closeBtn.click();
 }
 
-function prePopulateData(event){
-  
-  const cardId = Number(event.target.closest('#createModal').dataset.cardSelective);
-  if(cardId){
-    addForm.setAttribute(CARD_TITLE_ATTRIBUTE, cardId);
+function prePopulateData(){
+
+  const cardId = Number(document.querySelector('#createModal').dataset.cardSelective);
 
   let data = loadLocalDb();
 
   const prePopulateData = data.find((card) => card.id === Number(cardId));
-
+  console.log(prePopulateData);
   addForm.elements.title.value = prePopulateData.title;
   addForm.elements.description.value = prePopulateData.description;
   addForm.elements.imageUrl.value = prePopulateData.imageUrl;
-  } else {
-  addForm.reset();
-  }
-  
 }
 
 
 //cannot use an event parameter, without having an addEventListener. 
 function updateCard(newInfo){
-
- 
+  
   let data = loadLocalDb();
   
   //find the data to find out the correct data-card-identification so we can edit it.
-  //find function should be returning a boolean 
-  //old information on found card
   const foundCard = data.find((card) => card.id === newInfo.id);
   
   const itemToUpdate = document.querySelector( `#cardContainer [data-card-identification="${newInfo.id}"]`)
 
- 
-  
-  debugger;
   //updating the UI 
   itemToUpdate.querySelector(".card-title").textContent = newInfo.title;
   itemToUpdate.querySelector(".card-text").textContent = newInfo.description;
@@ -115,44 +102,35 @@ function updateCard(newInfo){
   
   //updating the database
   foundCard.title = newInfo.title;
-  foundCard.description = newInfo.title;
+  foundCard.description = newInfo.title; 
   foundCard.imageUrl = newInfo.imageUrl;
   
-    //gets the attribute that was set on the top to find out the unique card
-    //converting it to a Number since the attribute is an Id of Date.now();
-    // const idToUpdate1 = Number(child.getAttribute(CARD_TITLE_ATTRIBUTE));
-  
-    saveCardLocalStorage(data);
-      // const cardContainer = document.querySelector("#cardContainer");
-      
-      //cardContainer.append(updatedTitle, updatedDescription, updateImageUrl);
-    
-        //update card 
-        // change the innerHTML of each element by querying it by the unique id.  
-    }
-  
-  
+  saveCardLocalStorage(data);
+
+  }
+
   //this will select the modal delete button and call the function delete card (which card open the deleteModal)
   function setModalAttribute(event){
   
   const addBtn = document.getElementById("add-btn")
-  
-  //since the add button also calls the createModal, we need a validation when clicking the add doesn't trigger the setAttribute.
-  // however the add button is not inside a column. 
-  if(event.relatedTarget === addBtn){
-    event.target.dataset.cardSelective ="";
-  } else {
-     //related target the item that called the deleteModal from the new card which is the delete button. 
+
+    if(event.relatedTarget === addBtn){
+      addForm.reset();
+      event.target.dataset.cardSelective ="";
+    } else {
+    //related target the item that called the deleteModal from the new card which is the delete button. 
    // it will look on the delete button and look at the parent with the matching class or identifier (relatedTarget.closest())
-  let cardTriggerModal = event.relatedTarget.closest(".col-lg-3").getAttribute(CARD_TITLE_ATTRIBUTE);
-  //please note that since it's using the same modal for create button, it's trigging the setModal as an update when clicking on the Add.
+    let cardTriggerModal = event.relatedTarget.closest(".col-lg-3").getAttribute(CARD_TITLE_ATTRIBUTE);
+    //please note that since it's using the same modal for create button, it's trigging the setModal as an update when clicking on the Add.
   
   //any time when you click a modal the data attributes will change, will reach into the specific card by the id. 
   //setting the modalAttribute to match the card data-card-identification (Card-title-Attribute);
   //dataset retrieve the data-attribute
+
   //will add which ever button click for the modal
-  event.target.dataset.cardSelective = cardTriggerModal;
-  }
+    event.target.dataset.cardSelective = cardTriggerModal;
+    prePopulateData();
+    }
   
   }
   
@@ -164,7 +142,6 @@ function updateCard(newInfo){
     //would match one the cards in containers
     const idToDelete= Number(event.target.closest('#deleteModal').dataset.cardSelective);
   
-    // console.log(idToDelete);
   
     //going to the cardContainer and find the card that matches the data-card-identifications with the current modal data-card-identification. 
     //starting to the id cardContainer, and find the element that find that attribute. 
@@ -175,12 +152,12 @@ function updateCard(newInfo){
       //gets the attribute that was set on the top to find out the unique card
       //converting it to a Number since the attribute is an Id of Date.now();
       // const idToDelete = Number(child.getAttribute(CARD_TITLE_ATTRIBUTE));
-      let data = loadLocalDb();
+    let data = loadLocalDb();
   
       //keep the ones that don't have this specific Id, filter creates a new array
-      data = data.filter((cardInfo) => cardInfo.id !== idToDelete);
-      saveCardLocalStorage(data);
-      itemToDelete.remove();
+    data = data.filter((cardInfo) => cardInfo.id !== idToDelete);
+    saveCardLocalStorage(data);
+    itemToDelete.remove();
   }
 
 //Create a new card 
@@ -214,8 +191,8 @@ function createCard(cardInfo){
                     Delete
                   </button>
                 </div>
-              </div>
-              </div>`;
+            </div>
+    </div>`;
     //Add data to the title, description, url 
     //adding title 
     cardCol.querySelector(".card-title").textContent = cardInfo.title;
@@ -237,9 +214,12 @@ function createCard(cardInfo){
     
 }
 
+//local storage 
+
 //saving cards to localStorage (inspect -> Application to see K, V)
 function addCardLocalStorage(cardInfo){
     let data = loadLocalDb();
+
     data.push(cardInfo);
 
     //save it back to localStorage
@@ -247,13 +227,12 @@ function addCardLocalStorage(cardInfo){
 }
 
 //displaying from the database
-function displayAllCards(event){
+function displayAllCards(){
     let data = loadLocalDb();
     
     //loops every card that has been saved in the local db to display it 
     data.forEach((cardInfo) => createCard(cardInfo));
 }
-
 
 //loading from the database
 function loadLocalDb(){
@@ -263,9 +242,6 @@ function loadLocalDb(){
     }
     return data;
 }
-
-
-
 
 //save it back to the local storage
 function saveCardLocalStorage(data){

@@ -2,7 +2,7 @@
 
 /* Variables */
 const KEY = "card-data";
-const CARD_TITLE_ATTRIBUTE = "data-card-identification";
+const CARD_ID = "data-card-identification";
 const addForm = document.querySelector("#createModal form");
 
 // selects the delete button from the modal 
@@ -102,21 +102,28 @@ function updateCard(newInfo){
   //this will select the modal delete button and call the function delete card (which card open the deleteModal)
 function setModalAttribute(event){
   
-  const addBtn = document.getElementById("add-btn")
+  const addBtn = document.getElementById("add-btn");
+  const updateBtn = document.getElementById("updateBtn");
+
+  
 
     if(event.relatedTarget === addBtn){
       addForm.reset();
       event.target.dataset.cardSelective ="";
-    } else {
+
+    } else if(event.relatedTarget === updateBtn){
 
     //related target the item that called the deleteModal from the new card which is the delete button. 
     // it will look on the delete button and look at the parent with the matching class or identifier (relatedTarget.closest())
-    let cardTriggerModal = event.relatedTarget.closest(".col-lg-3").getAttribute(CARD_TITLE_ATTRIBUTE);
+    let cardTriggerModal = event.relatedTarget.closest(".col-lg-3").getAttribute(CARD_ID);
   
     //will add which ever button click for the modal
     event.target.dataset.cardSelective = cardTriggerModal;
-
     prePopulateData();
+    } else{
+      let cardTriggerModal = event.relatedTarget.closest(".col-lg-3").getAttribute(CARD_ID);
+
+      event.target.dataset.cardSelective = cardTriggerModal;
     }
   
   }
@@ -155,6 +162,7 @@ function createCard(cardInfo){
                   <!-- update button -->
                   <button
                     type="button"
+                    id="updateBtn"
                     class="btn btn-warning"
                     data-bs-toggle="modal"
                     data-bs-target="#createModal"
@@ -188,7 +196,7 @@ function createCard(cardInfo){
 
     //class has to start with "data-". will use this attribute to know which card to delete from DB
     //adding a attribute to the cardCol, which is a type of data-card-identification
-    cardCol.setAttribute(CARD_TITLE_ATTRIBUTE, cardInfo.id);
+    cardCol.setAttribute(CARD_ID, cardInfo.id);
     // document.querySelector(".btn danger").setAttribute(BUTTON_ID_ATTRIBUTE,);
     
 }

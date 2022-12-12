@@ -144,11 +144,11 @@ function deleteCard(event){
 //Create a new card 
 function createCard(cardInfo){
     const cardCol = document.createElement('div')
-    cardCol.classList.add("col-lg-3", "col-md-4", "col-sm-6", "d-flex");
+    cardCol.classList.add("col-lg-3", "col-md-4", "col-sm-6", "d-flex", "justify-content-center");
     cardCol.innerHTML = `
     <div class="card">
             <img class="card-img-top" />
-             <div class="card-body d-flex flex-column justify-content-between align-item-between">
+             <div class="card-body d-flex flex-column justify-content-between ">
                 <h5 class="card-title"></h5>
                 <p class="card-text"></p>
                 <div>

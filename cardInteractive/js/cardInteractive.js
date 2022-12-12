@@ -21,7 +21,7 @@ deleteBtn.addEventListener("click", deleteCard);
 //show.bs.modal fires when the modal is about to be displayed - on this case the delete button modal
 //anytime when the modal pops up, we add an eventlistener which is "setModalAttribute"
 deleteModal.addEventListener("show.bs.modal", setModalAttribute);
-updateModal.addEventListener("show.bs.modal",setModalAttribute);
+updateModal.addEventListener("show.bs.modal", setModalAttribute);
 
 /* Functions */
 function handleAddSubmit(event){
@@ -59,15 +59,12 @@ function handleAddSubmit(event){
     closeBtn.click();
 }
 
-function prePopulateData(){
+function populateData(cardInfo){
   //finds the data-attribute of card
-  const cardId = Number(document.querySelector('#createModal').dataset.cardSelective);
-
   let data = loadCardFromDb();
-
   //fetches the corresponding data from local storage
-  const cardData = data.find((card) => card.id === Number(cardId));
-
+  const cardData = data.find((card) => card.id === Number(cardInfo));
+  debugger;
   //pre-populates the information to the form
   addForm.elements.title.value = cardData.title;
   addForm.elements.description.value = cardData.description;
@@ -103,30 +100,31 @@ function updateCard(newInfo){
 function setModalAttribute(event){
   
   const addBtn = document.getElementById("add-btn");
-  const updateBtn = document.getElementById("updateBtn");
-
 
     if(event.relatedTarget === addBtn){
       addForm.reset();
       event.target.dataset.cardSelective ="";
+      console.log(addBtn);
 
-    } else if(event.relatedTarget === updateBtn){
+    //this way won't find the the 1st class of the element. by event knows which one to choose, by the button click. 
+    } else if(event.relatedTarget.classList.contains("btn-warning")){
 
     //related target the item that called the deleteModal from the new card which is the delete button. 
     // it will look on the delete button and look at the parent with the matching class or identifier (relatedTarget.closest())
     let cardTriggerModal = event.relatedTarget.closest(".col-lg-3").getAttribute(CARD_ID);
-  
+   
     //will add which ever button click for the modal
     event.target.dataset.cardSelective = cardTriggerModal;
-    prePopulateData();
-    } else{
-      
-      let cardTriggerModal = event.relatedTarget.closest(".col-lg-3").getAttribute(CARD_ID);
+  
+    populateData(cardTriggerModal);
 
+    } else{
+
+      let cardTriggerModal = event.relatedTarget.closest(".col-lg-3").getAttribute(CARD_ID);
+        console.log(cardTriggerModal);
       event.target.dataset.cardSelective = cardTriggerModal;
     }
     
-  
   }
   
   //delete card from page
@@ -163,7 +161,6 @@ function createCard(cardInfo){
                   <!-- update button -->
                   <button
                     type="button"
-                    id="updateBtn"
                     class="btn btn-warning"
                     data-bs-toggle="modal"
                     data-bs-target="#createModal"
@@ -198,7 +195,6 @@ function createCard(cardInfo){
     //class has to start with "data-". will use this attribute to know which card to delete from DB
     //adding a attribute to the cardCol, which is a type of data-card-identification
     cardCol.setAttribute(CARD_ID, cardInfo.id);
-    // document.querySelector(".btn danger").setAttribute(BUTTON_ID_ATTRIBUTE,);
 
 }
 

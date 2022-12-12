@@ -64,7 +64,7 @@ function populateData(cardInfo){
   let data = loadCardFromDb();
   //fetches the corresponding data from local storage
   const cardData = data.find((card) => card.id === Number(cardInfo));
-  debugger;
+
   //pre-populates the information to the form
   addForm.elements.title.value = cardData.title;
   addForm.elements.description.value = cardData.description;

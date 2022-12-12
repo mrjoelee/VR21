@@ -21,6 +21,8 @@ deleteBtn.addEventListener("click", deleteCard);
 //show.bs.modal fires when the modal is about to be displayed - on this case the delete button modal
 //anytime when the modal pops up, we add an eventlistener which is "setModalAttribute"
 deleteModal.addEventListener("show.bs.modal", setModalAttribute);
+
+
 updateModal.addEventListener("show.bs.modal",setModalAttribute);
 
 /* Functions */
@@ -105,7 +107,6 @@ function setModalAttribute(event){
   const addBtn = document.getElementById("add-btn");
   const updateBtn = document.getElementById("updateBtn");
 
-  
 
     if(event.relatedTarget === addBtn){
       addForm.reset();
@@ -125,6 +126,8 @@ function setModalAttribute(event){
 
       event.target.dataset.cardSelective = cardTriggerModal;
     }
+    console.log(event.target.dataset.cardSelective);
+    
   
   }
   
@@ -198,7 +201,7 @@ function createCard(cardInfo){
     //adding a attribute to the cardCol, which is a type of data-card-identification
     cardCol.setAttribute(CARD_ID, cardInfo.id);
     // document.querySelector(".btn danger").setAttribute(BUTTON_ID_ATTRIBUTE,);
-    
+    console.log(cardInfo.id);
 }
 
 /*Local Storage*/

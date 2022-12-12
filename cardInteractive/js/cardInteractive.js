@@ -112,7 +112,7 @@ function setModalAttribute(event){
     //related target the item that called the deleteModal from the new card which is the delete button. 
     // it will look on the delete button and look at the parent with the matching class or identifier (relatedTarget.closest())
     let cardTriggerModal = event.relatedTarget.closest(".col-lg-3").getAttribute(CARD_ID);
-   
+      
     //will add which ever button click for the modal
     event.target.dataset.cardSelective = cardTriggerModal;
   

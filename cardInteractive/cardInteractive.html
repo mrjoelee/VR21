@@ -20,6 +20,13 @@
       integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="./css/stylesheet.css" />
   </head>
 
@@ -52,7 +59,7 @@
               data-bs-target="#createModal"
               id="add-btn"
             >
-              Add
+              <i class="fa-solid fa-arrow-up-from-bracket"></i>
             </button>
           </div>
         </nav>
@@ -115,9 +122,11 @@
                     class="btn btn-secondary"
                     data-bs-dismiss="modal"
                   >
-                    Close
+                    <i class="fa-solid fa-ban"></i>
                   </button>
-                  <button type="submit" class="btn btn-primary">Save</button>
+                  <button type="submit" class="btn btn-primary">
+                    <i class="fa-solid fa-floppy-disk"></i>
+                  </button>
                 </form>
               </div>
             </div>
@@ -157,14 +166,14 @@
                 class="btn btn-secondary"
                 data-bs-dismiss="modal"
               >
-                Cancel
+                <i class="fa-solid fa-ban"></i>
               </button>
               <button
                 type="button"
                 data-bs-dismiss="modal"
                 class="btn btn-danger"
               >
-                Delete
+                <i class="fa-sharp fa-solid fa-trash"></i>
               </button>
             </div>
           </div>

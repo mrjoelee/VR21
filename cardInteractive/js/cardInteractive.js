@@ -165,7 +165,7 @@ function createCard(cardInfo){
                     data-bs-toggle="modal"
                     data-bs-target="#createModal"
                   >
-                    Update
+                  <i class="fa-solid fa-pen"></i>
                   </button>
 
                   <!-- delete button -->
@@ -175,7 +175,8 @@ function createCard(cardInfo){
                     data-bs-toggle="modal"
                     data-bs-target="#deleteModal"
                   >
-                    Delete
+                  <i class="fa-sharp fa-solid fa-trash"></i>
+                    
                   </button>
                 </div>
             </div>

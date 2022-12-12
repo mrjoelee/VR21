@@ -21,8 +21,6 @@ deleteBtn.addEventListener("click", deleteCard);
 //show.bs.modal fires when the modal is about to be displayed - on this case the delete button modal
 //anytime when the modal pops up, we add an eventlistener which is "setModalAttribute"
 deleteModal.addEventListener("show.bs.modal", setModalAttribute);
-
-
 updateModal.addEventListener("show.bs.modal",setModalAttribute);
 
 /* Functions */
@@ -82,8 +80,8 @@ function updateCard(newInfo){
   let data = loadCardFromDb();
   
   //find the data to find out the correct data-card-identification so we can edit it.
-  const foundCard = data.find((card) => card.id === newInfo.id);
-  
+  const cardFromDb = data.find((card) => card.id === newInfo.id);
+
   const itemToUpdate = document.querySelector( `#cardContainer [data-card-identification="${newInfo.id}"]`)
 
   //updating the UI 
@@ -93,9 +91,9 @@ function updateCard(newInfo){
   itemToUpdate.querySelector(".card-img-top").setAttribute("alt", newInfo.imageUrl);
   
   //updating the database
-  foundCard.title = newInfo.title;
-  foundCard.description = newInfo.title; 
-  foundCard.imageUrl = newInfo.imageUrl;
+  cardFromDb.title = newInfo.title;
+  cardFromDb.description = newInfo.description; 
+  cardFromDb.imageUrl = newInfo.imageUrl;
   
   saveCardToDb(data);
 
@@ -122,11 +120,11 @@ function setModalAttribute(event){
     event.target.dataset.cardSelective = cardTriggerModal;
     prePopulateData();
     } else{
+      
       let cardTriggerModal = event.relatedTarget.closest(".col-lg-3").getAttribute(CARD_ID);
 
       event.target.dataset.cardSelective = cardTriggerModal;
     }
-    console.log(event.target.dataset.cardSelective);
     
   
   }
@@ -201,7 +199,7 @@ function createCard(cardInfo){
     //adding a attribute to the cardCol, which is a type of data-card-identification
     cardCol.setAttribute(CARD_ID, cardInfo.id);
     // document.querySelector(".btn danger").setAttribute(BUTTON_ID_ATTRIBUTE,);
-    console.log(cardInfo.id);
+
 }
 
 /*Local Storage*/

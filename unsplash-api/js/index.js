@@ -38,11 +38,11 @@ function handleAddSubmit(event){
         <div>`;
   
       const url = data.results[i].urls.thumb;
-      // const title = data.results[i].title;
-      // const text = data.results[i].atl_description;
+      const title = data.results[i].alt_description;
+      const text = data.results[i].description;
 
-      // cardCol.querySelector(".card-title").textContent = title;
-      // cardCol.querySelector(".card-text").textContent = text;
+      cardCol.querySelector(".card-title").textContent = title;
+      cardCol.querySelector(".card-text").textContent = text;
       cardCol.querySelector(".card-img-top").setAttribute("src",url);
       const cardContainer = document.querySelector("#cardContainer");
       cardContainer.append(cardCol);

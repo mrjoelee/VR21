@@ -29,14 +29,21 @@ function handleAddSubmit(event){
 // loop over the data and append to the dom
   for (let i = 0; i < data.results.length - 1; i++) {
     const cardCol = document.createElement('div')
-    cardCol.classList.add("col-lg-3", "col-md-4", "col-sm-6", "d-flex");
-    cardCol.innerHTML = `<div "class = card">
-    <img class="card-img" />
-    </div>`;
+    cardCol.classList.add("col-lg-3", "col-md-4", "col-sm-6", "d-flex", "justify-content-center");
+    cardCol.innerHTML = `<div class="card">
+    <img class="card-img-top" />
+     <div class="card-body d-flex flex-column justify-content-between ">
+        <h5 class="card-title"></h5>
+        <p class="card-text"></p>
+        <div>`;
   
       const url = data.results[i].urls.thumb;
-      
-      cardCol.querySelector(".card-img").setAttribute("src",url);
+      // const title = data.results[i].title;
+      // const text = data.results[i].atl_description;
+
+      // cardCol.querySelector(".card-title").textContent = title;
+      // cardCol.querySelector(".card-text").textContent = text;
+      cardCol.querySelector(".card-img-top").setAttribute("src",url);
       const cardContainer = document.querySelector("#cardContainer");
       cardContainer.append(cardCol);
   }

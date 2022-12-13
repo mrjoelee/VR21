@@ -4,7 +4,7 @@
 const client_id = "kOwh_LYYd_4pmQZu1PGCViBEOWJ_XWwcx0PVVMmox6Y"; // Create an account unsplash tp hey client ID;
 // capture search term 
 
-//const searchStr = "beaches";
+//FIXME : page doesn't refresh when doing a new Search
 
 const searchBtn = document.querySelector("#search")
 searchBtn.addEventListener("click", handleAddSubmit);

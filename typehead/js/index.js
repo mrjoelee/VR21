@@ -16,25 +16,23 @@
 "use strict";
 
 const arrayOfObj = [
-  { name: "Fox", link: "foxnews.com" },
-  { name: "Fandango", link: "fandango.com" },
-  { name: "CNN", link: "cnn.com" },
-  { name: "Google", link: "google.com" },
-  { name: "YouTube", link: "youtube.com" },
-  { name: "Instagram", link: "instagram.com" },
-  { name: "Amazon", link: "amazon.com" },
-  { name: "Maps Google", link: "google.maps.com" },
-  { name: "Udemy", link: "udemy.com" },
-  { name: "Telegram", link: "telegram.org" },
-  { name: "Discord", link: "discord.com" },
-  { name: "Slack", link: "slack.com" },
+  { name: "Fox", link: "https://foxnews.com" },
+  { name: "Fandango", link: "https://fandango.com" },
+  { name: "CNN", link: "https://cnn.com" },
+  { name: "Google", link: "https://google.com" },
+  { name: "YouTube", link: "https://youtube.com" },
+  { name: "Instagram", link: "https://instagram.com" },
+  { name: "Amazon", link: "https://amazon.com" },
+  { name: "Maps Google", link: "https://google.maps.com" },
+  { name: "Udemy", link: "https://udemy.com" },
+  { name: "Telegram", link: "https://telegram.org" },
+  { name: "Discord", link: "https://discord.com" },
+  { name: "Slack", link: "https://slack.com" },
 ];
 const MAX_RESULTS = 3;
 const searchInput = document.querySelector("#myInput");
-const searchBtn = document.querySelector("#search-btn");
 
 searchInput.addEventListener("keyup", debounce(keyUp));
-searchBtn.addEventListener("click", visitPage);
 
 function keyUp(event) {
   const userInput = searchInput.value.toLocaleLowerCase();
@@ -59,9 +57,9 @@ function showTypeHead(suggestions) {
   } else {
     //looping to each result
     suggestions.forEach((result) => {
-      const li = document.createElement("option");
+      const li = document.createElement("li");
       li.innerHTML = `
-            <a href ="${result.link}">${result.name}</a>
+      <a href="${result.link}" target="_blank">${result.name}</a>
             `;
       ul.append(li);
       //   function visitPage() {
